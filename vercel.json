@@ -6,7 +6,7 @@
       "use": "@vercel/static"
     }
   ],
-  "routes": [
+  "routes": [https://portfolionew-phi-six.vercel.app/]
     {
       "src": "/(.*)",
       "dest": "/$1"
