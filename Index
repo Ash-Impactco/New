@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aswin Raj  | Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Main CSS -->
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <!-- Animations CSS -->
+    <link href="/assets/css/animations.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2C3E50',
+                        secondary: '#34495E',
+                        accent: '#7F8C8D',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#home">Aswin Raj</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">I'm</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certification">Online Certification</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#resume">Resume</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="typing-text">
+                <h1 class="animate-on-scroll">Aswin Raj Sivaprakash</h1>
+                <h2 class="animate-on-scroll">Business Executive / Customer Support</h2>
+            </div>
+            <div class="hero-buttons animate-on-scroll">
+                <a href="#contact" class="btn btn-primary">Contact Me</a>
+                <a href="mailto:aswinr63@gmail.com" class="btn btn-secondary">Email Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>About</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Spearheaded data-driven marketing strategies across Clean Tech, Pharmaceutical, Travel, and IGaming sectors, increasing lead generation by 35% and improving marketing ROI by 22% across diverse European markets. Passionate about driving impactful climate solutions and global sustainability through targeted marketing across the globe.</p>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>aswinr63@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Porto, Portugal</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+351 938816822</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fab fa-linkedin"></i>
+                            <a href="https://linkedin.com/in/aswin-sivaprakash" target="_blank">linkedin.com/in/aswin-sivaprakash</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Education</h2>
+            </div>
+            <div class="education-timeline">
+                <div class="education-item">
+                    <h3>MASTER'S IN ENVIRONMENTAL AND ENERGY MANAGEMENT</h3>
+                    <h4>University of Twente, Enschede</h4>
+                    <p class="date">2021 - 2022</p>
+                </div>
+                <div class="education-item">
+                    <h3>BACHELOR'S IN ENVIRONMENTAL SCIENCE</h3>
+                    <h4>Amity University, Noida</h4>
+                    <p class="date">2015 - 2018</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Experience</h2>
+            </div>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <h3>CLEAN TECH MARKETER</h3>
+                    <h4>Freelance</h4>
+                    <p class="date">Jan 2025 - Present</p>
+                    <ul>
+                        <li>Executed targeted demand generation campaigns for early-stage cleantech startups, increasing SQLs by 1.5× and contributing to a $100K+ sales pipeline.</li>
+                        <li>Improved lead quality and reduced CAC through SEO, PPC, and HubSpot.</li>
+                        <li>Supported cross-functional GTM activities across energy and mobility sectors.</li>
+                        <li>Helped boost site traffic by 50% and enhanced MQL engagement.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>CUSTOMER SUCCESS & MARKETING SPECIALIST</h3>
+                    <h4>Scores & Levels, Porto</h4>
+                    <p class="date">June 2024 - Present</p>
+                    <ul>
+                        <li>Collaborated with the marketing team to develop data-driven promotional strategies using HubSpot, leading to a 25% increase in customer retention across all regions.</li>
+                        <li>Executed bulk messaging campaigns targeting 10,000+ clients, driving a 15% uplift in player engagement and a 10% increase in deposits.</li>
+                        <li>Oversaw player engagement and retention initiatives, contributing to a 20% overall growth in customer lifetime value across Asian, African, and Brazilian markets.</li>
+                        <li>Managed a portfolio of 150+ VIP customers, conducting telemarketing campaigns that resulted in a 20% increase in high-value customer engagement.</li>
+                        <li>Promoted new bonuses and offers, leading to the reactivation of 30% of dormant VIP accounts across targeted regions.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>BUSINESS DEVELOPMENT MANAGER</h3>
+                    <h4>National Chromatography Inco, Europe</h4>
+                    <p class="date">Oct 2022 - May 2024</p>
+                    <ul>
+                        <li>Acquired consistent new business with well-formulated and executed strategies based on market expertise.</li>
+                        <li>Collaborated with sales and business development teams to fulfill bids, RFP, and tender under strict timelines.</li>
+                        <li>Contributed to bottom line revenue by attaining 80% of sales quota.</li>
+                        <li>Revitalized marketing efforts employing streamlined processes and rebranding initiatives.</li>
+                        <li>Prospected and qualified marketing leads from the pharmaceutical industry using Salesforce CRM attaining conversion rates of 13%.</li>
+                        <li>Ampified international sales by selling pharmaceutical stocks worth $35k across North America and South Asia.</li>
+                        <li>Liaised with directors, R&D team, sales and procurement team, dispatch and management teams through weekly and monthly meetings.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>CLIENT RELATIONSHIP SPECIALIST</h3>
+                    <h4>Eurail, Netherlands</h4>
+                    <p class="date">Sept 2022 - Aug 2023</p>
+                    <ul>
+                        <li>Addressed customer inquiries through phone, email, and chat channels.</li>
+                        <li>Diagnosed and troubleshooted customer problems while delivering technical assistance.</li>
+                        <li>Monitored and escalated complex bet disputes to RFBA, CRM, or OPS teams using 9 Wickets.</li>
+                        <li>Assisted over 300 clients monthly with account registrations, deposits, and withdrawals.</li>
+                        <li>Managed a portfolio of 150+ VIP customers, conducting telemarketing campaigns that resulted in a 20% increase in high-value customer engagement.</li>
+                        <li>Promoted new bonuses and offers, leading to the reactivation of 30% of dormant VIP accounts across targeted regions.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>ENVIRONMENTAL ASSISTANT</h3>
+                    <h4>MGK Aqua Inco, India</h4>
+                    <p class="date">Nov 2020 - Aug 2021</p>
+                    <ul>
+                        <li>Developed Detailed Project Reports (DPRs) on sustainability, climate change, GHG management, and energy efficiency for BOSCH, PepsiCo, and multiple textile and tanning companies.</li>
+                        <li>Led water treatment initiatives for 15+ residential and corporate projects by analyzing BOD, DO, TSS, and other parameters.</li>
+                        <li>Designed coagulant/flocculant specifications and supported the installation of drinking water setups, acoustic blowers, and ETPs.</li>
+                        <li>Conducted waste management training during corporate/public events and utilized Agile/Kanban methods for sales tracking and stakeholder engagement.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>PROJECT ASSISTANT</h3>
+                    <h4>UNICEF, Water Sanitation and Hygiene (WASH), India</h4>
+                    <p class="date">Jul 2018 - Jun 2019</p>
+                    <ul>
+                        <li>Communicated with government officials regarding environmental sustainability and GHG Management projects.</li>
+                        <li>Streamlined water testing by analyzing 63 parameters and integrated solar-powered stoves for over 10,000 tea estate residents.</li>
+                        <li>Modernized the preliminary designs for water pumps and beddings in 16 tea estates across Dibrugarh, Assam.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>INTERNSHIP</h3>
+                    <h4>SMOOB (Smart Mobility Operating Autonomous Vehicle), Netherlands</h4>
+                    <p class="date">Apr 2022 - Jul 2022</p>
+                    <ul>
+                        <li>Specialized in creating fast & reliable charging location apps for EV drivers through traffic analysis, road quality estimation, urban planning, and seamless troubleshooting.</li>
+                        <li>Contributed to reversing Nitrogen Crisis with AMC and migration to cities.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Upcoming Geothermal Heat Grid</h3>
+                    <h4>Leeuwarden, Netherlands</h4>
+                    <p class="date">Feb 2022 - Apr 2022</p>
+                    <div class="project-content">
+                        <ul>
+                            <li>Conducted comprehensive social impact assessment through interviews with 100 respondents</li>
+                            <li>Explored public concerns regarding integration of geothermal energy into existing heat grid</li>
+                            <li>Implemented DESSIN-ESS conceptual framework for qualitative data processing</li>
+                            <li>Findings published by Omrop Fryslân: <a href="https://www.omropfryslan.nl/nl/nieuws/1144457/internationale-studenten-duurzame-aanpak-in-fryslan-is-mogelijk" target="_blank">View Publication</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Coral Bleaching Status</h3>
+                    <h4>Andaman Islands, India</h4>
+                    <p class="date">Dec 2017 - Feb 2018</p>
+                    <div class="project-content">
+                        <ul>
+                            <li>Conducted comprehensive SST analysis revealing 1°C temperature threshold above maximum monthly temperature</li>
+                            <li>Identified degradation of zooxanthellae-algae symbiosis due to thermal stress</li>
+                            <li>Developed Coral Bleaching Alert System (CBAS) using satellite-derived SST data</li>
+                            <li>Studied Acropora coral species degradation rate and SST correlation</li>
+                            <li>Presented findings to multiple stakeholders:
+                                <ul>
+                                    <li>ANET (Andaman Nicobar Environment Team)</li>
+                                    <li>Indian Wildlife Department</li>
+                                    <li>Indian Coast Guard of Andaman</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>EV-Charging App Pilot</h3>
+                    <h4>SMOOV, Netherlands</h4>
+                    <p class="date">Apr 2022 - Jul 2022</p>
+                    <div class="project-content">
+                        <ul>
+                            <li>Assisted in product marketing strategy for fast-charging network</li>
+                            <li>Performed traffic analysis and urban planning recommendations</li>
+                            <li>Contributed to infrastructure planning for EV charging stations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certification Section -->
+    <section id="certification" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Certifications</h2>
+            </div>
+            <div class="certification-grid">
+                <div class="certification-item">
+                    <h3>PROJECT MANAGEMENT BY GOOGLE</h3>
+                    <p class="date">2022</p>
+                </div>
+                <div class="certification-item">
+                    <h3>NEGOTIATION</h3>
+                    <p class="date">University of Yale</p>
+                </div>
+                <div class="certification-item">
+                    <h3>GENERATIVE AI FOR DIGITAL MARKETERS</h3>
+                    <p class="date">LinkedIn</p>
+                </div>
+                <div class="certification-item">
+                    <h3>NEBOSH INTERNATIONAL GENERAL CERTIFICATE IN OCCUPATIONAL HEALTH AND SAFETY</h3>
+                    <p class="date">2022</p>
+                </div>
+                <div class="certification-item">
+                    <h3>ISO 14001:2015 LEAD AUDITOR FOR ENVIRONMENTAL MANAGEMENT SYSTEM</h3>
+                    <p class="date">IRCA | International Register of Certified Auditors</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    <!-- Ventures Section -->
+    <section id="ventures" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ventures</h2>
+                <p class="section-subtitle">Sustainable initiatives making a difference</p>
+            </div>
+            <div class="ventures-grid">
+                <div class="venture-card">
+                    <h3>INTRUSIVE THOUGHTS</h3>
+                    <p class="date">2022 - Present</p>
+                    <div class="venture-content">
+                        <ul>
+                            <li>Created Intrusive Thoughts, a platform to spread awareness about sustainable living and eco-friendly practices</li>
+                            <li>Share engaging content about climate change, renewable energy, and practical ways to live sustainably</li>
+                            <li>Organize workshops and campaigns to educate communities about environmental issues</li>
+                            <li>Follow us: <a href="https://linktr.ee/intrusivethoughtsftw" target="_blank">Intrusive Thoughts</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="venture-card">
+                    <h3>BURRITO DELHI</h3>
+                    <p class="date">2023 - Present</p>
+                    <div class="venture-content">
+                        <ul>
+                            <li>Launched Burrito Delhi, a plant-based food venture that promotes sustainable eating</li>
+                            <li>Offer delicious vegan burritos made with locally-sourced, organic ingredients</li>
+                            <li>Implement food waste reduction strategies through precision cooking and composting</li>
+                            <li>Join us on: <a href="https://www.instagram.com/burrito_delhi/" target="_blank">@burrito_delhi</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="venture-card">
+                    <h3>ANNA KADUKAAN</h3>
+                    <p class="date">2023 - Present</p>
+                    <div class="venture-content">
+                        <ul>
+                            <li>Partnered in Anna Kadukaan, a vegan food venture that blends traditional Indian flavors with sustainable practices</li>
+                            <li>Transform traditional recipes into vegan delights while reducing carbon footprint</li>
+                            <li>Support local farmers and promote seasonal, sustainable produce</li>
+                            <li>Follow our journey: <a href="https://www.instagram.com/annakadukaan/" target="_blank">@annakadukaan</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download CV Section -->
+    <section id="resume" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Download CV</h2>
+            </div>
+            <div class="cv-download">
+                <p>Download my latest CV in PDF format:</p>
+                <a href="assets/cv/Aswin_Raj_Sivaprakash_CV.pdf" class="btn btn-primary" download>Download CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Skills</h2>
+            </div>
+            <div class="skills-content">
+                <div class="skill-card">
+                    <h3>Marketing & Demand Generation</h3>
+                    <div class="skill-group">
+                        <h4>Tools</h4>
+                        <ul>
+                            <li>HubSpot</li>
+                            <li>Salesforce</li>
+                            <li>Mailchimp</li>
+                            <li>Zendesk</li>
+                            <li>Coldoutreach</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Analytics & Reporting</h3>
+                    <div class="skill-group">
+                        <h4>Skills</h4>
+                        <ul>
+                            <li>SQL</li>
+                            <li>PowerBI</li>
+                            <li>CRM</li>
+                            <li>Excel</li>
+                            <li>Google Sheets</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Project & Stakeholder Management</h3>
+                    <div class="skill-group">
+                        <h4>Skills</h4>
+                        <ul>
+                            <li>Jira/Kanban</li>
+                            <li>Agile</li>
+                            <li>SOP Development</li>
+                            <li>Cross-functional Collaboration</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Sustainability & Carbon</h3>
+                    <div class="skill-group">
+                        <h4>Certifications</h4>
+                        <ul>
+                            <li>ISO14001 EMS Auditing</li>
+                            <li>GHG Accounting</li>
+                            <li>NEBOSH</li>
+                            <li>EIA</li>
+                            <li>GIS</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Communications</h3>
+                    <div class="skill-group">
+                        <h4>Skills</h4>
+                        <ul>
+                            <li>RFP/Tender Response</li>
+                            <li>Technical Content</li>
+                            <li>Presentation Decks</li>
+                            <li>Multilingual Outreach (Unbabel)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>My Address</h3>
+                    <p>Porto, Portugal</p>
+                    <h3>Email</h3>
+                    <p>aswinr63@gmail.com</p>
+                    <h3>Phone</h3>
+                    <p>+351 938816822</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Aswin Raj Sivaprakash. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Main JS -->
+    <script src="/assets/js/main.js"></script>
+    <!-- Initialize Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add fade-in animations to sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.add('fade-in');
+            });
+
+            // Add slide-in animations to experience items
+            const experienceItems = document.querySelectorAll('.experience-item');
+            experienceItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('slide-in-left');
+                }, index * 200);
+            });
+
+            // Add scale-in animations to projects
+            const projects = document.querySelectorAll('.project');
+            projects.forEach((project, index) => {
+                setTimeout(() => {
+                    project.classList.add('scale-in');
+                }, index * 300);
+            });
+        });
+    </script>
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
