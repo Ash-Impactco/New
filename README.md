@@ -1,4 +1,4 @@
- Aswin Raj Portfolio
+# Aswin Raj Portfolio
 
 A modern, responsive portfolio website showcasing my professional experience, projects, and skills.
 
