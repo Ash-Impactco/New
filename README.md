@@ -42,7 +42,7 @@ portfolio/
 │   ├── main.js        # Core functionality and event handlers
 │   ├── animations.js  # Animation and scroll effects
 │   └── utils.js       # Utility functions and helpers
-├── Assets/            # Images and other assets
+├── assets/            # Images and other assets
 │   ├── Companies/     # Company logos and brand assets
 │   ├── Clean tech/    # Project and technology images
 │   └── Education/     # University and education images
