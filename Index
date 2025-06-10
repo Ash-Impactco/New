@@ -139,7 +139,7 @@
                     <a href="#projects" class="nav-link">Projects</a>
                     <a href="#skills" class="nav-link">Skills</a>
                     <a href="#contact" class="nav-link">Contact</a>
-                </div>
+            </div>
                 <button class="md:hidden" id="mobile-menu-button">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
@@ -172,7 +172,7 @@
                 <div class="flex justify-center space-x-4" data-aos="fade-up" data-aos-delay="400">
                     <a href="#contact" class="bg-white text-primary px-8 py-3 rounded-full hover:bg-gray-100 transition-colors">Contact Me</a>
                     <a href="mailto:aswinr63@gmail.com" class="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-primary transition-colors">Email Me</a>
-                </div>
+            </div>
             </div>
         </div>
     </section>
@@ -190,16 +190,16 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="flex items-center space-x-4">
                         <i class="fas fa-envelope text-primary text-xl"></i>
-                        <span>aswinr63@gmail.com</span>
-                    </div>
+                            <span>aswinr63@gmail.com</span>
+                        </div>
                     <div class="flex items-center space-x-4">
                         <i class="fas fa-map-marker-alt text-primary text-xl"></i>
-                        <span>Porto, Portugal</span>
-                    </div>
+                            <span>Porto, Portugal</span>
+                        </div>
                     <div class="flex items-center space-x-4">
                         <i class="fas fa-phone text-primary text-xl"></i>
-                        <span>+351 938816822</span>
-                    </div>
+                            <span>+351 938816822</span>
+                        </div>
                     <div class="flex items-center space-x-4">
                         <i class="fab fa-linkedin text-primary text-xl"></i>
                         <a href="https://linkedin.com/in/aswin-sivaprakash" target="_blank" class="hover:text-primary">linkedin.com/in/aswin-sivaprakash</a>
@@ -332,17 +332,17 @@
                             <div class="relative overflow-hidden rounded-lg mb-4">
                                 <img src="Assets/Clean tech/events_map.jpg" alt="Europe Climate & Energy Events Map" class="w-full h-48 object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                            </div>
+                    </div>
                             <div class="bg-primary text-white p-4 rounded-t-lg -mt-6 -mx-6 mb-4">
                                 <h3 class="text-xl font-bold">Europe Climate & Energy Events Map 2025</h3>
-                            </div>
+                </div>
                             <p class="text-gray-600 mb-4">50+ curated events across Europe, mapped and searchable</p>
                             <div class="flex items-center space-x-2 text-primary group-hover:text-secondary transition-colors">
                                 <i class="fas fa-map-marked-alt"></i>
                                 <span>View Live on Vercel</span>
                                 <i class="fas fa-external-link-alt ml-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                     </a>
 
                     <!-- ERW Use in Mangroves -->
@@ -351,17 +351,17 @@
                             <div class="relative overflow-hidden rounded-lg mb-4">
                                 <img src="Assets/Clean tech/mangroves.jpg" alt="ERW Use in Mangroves" class="w-full h-48 object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                            </div>
+                    </div>
                             <div class="bg-primary text-white p-4 rounded-t-lg -mt-6 -mx-6 mb-4">
                                 <h3 class="text-xl font-bold">ERW Use in Mangroves</h3>
-                            </div>
+                </div>
                             <p class="text-gray-600 mb-4">Research and implementation of Enhanced Rock Weathering in mangrove ecosystems</p>
                             <div class="flex items-center space-x-2 text-primary group-hover:text-secondary transition-colors">
                                 <i class="fab fa-github"></i>
                                 <span>View on GitHub</span>
                                 <i class="fas fa-external-link-alt ml-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                            </div>
-                        </div>
+            </div>
+        </div>
                     </a>
 
                     <!-- ERW Use in Salt Marshes -->
@@ -370,17 +370,17 @@
                             <div class="relative overflow-hidden rounded-lg mb-4">
                                 <img src="Assets/Clean tech/salt_marshes.jpg" alt="ERW Use in Salt Marshes" class="w-full h-48 object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                            </div>
+            </div>
                             <div class="bg-primary text-white p-4 rounded-t-lg -mt-6 -mx-6 mb-4">
                                 <h3 class="text-xl font-bold">ERW Use in Salt Marshes</h3>
-                            </div>
+                </div>
                             <p class="text-gray-600 mb-4">Research and implementation of Enhanced Rock Weathering in salt marsh ecosystems</p>
                             <div class="flex items-center space-x-2 text-primary group-hover:text-secondary transition-colors">
                                 <i class="fab fa-github"></i>
                                 <span>View on GitHub</span>
                                 <i class="fas fa-external-link-alt ml-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                            </div>
-                        </div>
+                </div>
+                </div>
                     </a>
                 </div>
             </div>
@@ -418,12 +418,12 @@
                     <div class="text-center">
                         <i class="fas fa-map-marker-alt text-4xl text-primary mb-4"></i>
                         <h3 class="text-xl font-bold mb-2">Location</h3>
-                        <p>Porto, Portugal</p>
+                    <p>Porto, Portugal</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-envelope text-4xl text-primary mb-4"></i>
                         <h3 class="text-xl font-bold mb-2">Email</h3>
-                        <p>aswinr63@gmail.com</p>
+                    <p>aswinr63@gmail.com</p>
                     </div>
                 </div>
             </div>
