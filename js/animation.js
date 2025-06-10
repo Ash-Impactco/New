@@ -1,69 +1,72 @@
-// Intersection Observer for scroll animations
-const animationObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-            // Add additional animations based on data attributes
-            if (entry.target.dataset.animate === 'slide-up') {
-                entry.target.classList.add('animate-slide-up');
+// Animation and transition functionality
+document.addEventListener('DOMContentLoaded', () => {
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-in');
+                observer.unobserve(entry.target);
             }
-            if (entry.target.dataset.animate === 'scale-in') {
-                entry.target.classList.add('animate-scale-in');
-            }
-            // Remove observer after animation
-            animationObserver.unobserve(entry.target);
+        });
+    }, observerOptions);
+
+    // Observe elements with animation classes
+    document.querySelectorAll('.animate-on-scroll').forEach(element => {
+        observer.observe(element);
+    });
+
+    // Smooth reveal for collapsible sections
+    const collapsibles = document.querySelectorAll('.collapsible');
+    collapsibles.forEach(collapsible => {
+        const content = collapsible.nextElementSibling;
+        if (content) {
+            content.style.maxHeight = '0px';
+            content.style.transition = 'max-height 0.3s ease-out';
         }
     });
-}, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-});
 
-// Initialize animations
-function initializeAnimations() {
-    // Animate sections
-    document.querySelectorAll('.section').forEach(section => {
-        animationObserver.observe(section);
-    });
+    // Add animation classes to elements
+    function addAnimationClasses() {
+        // Hero section
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.classList.add('animate-fade-in');
+        }
 
-    // Animate elements with data-animate attribute
-    document.querySelectorAll('[data-animate]').forEach(element => {
-        animationObserver.observe(element);
-    });
-}
+        // Project cards
+        document.querySelectorAll('.project-card').forEach((card, index) => {
+            card.classList.add('animate-fade-in');
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
 
-// Parallax effect
-function initializeParallax() {
-    window.addEventListener('scroll', () => {
-        const parallaxElements = document.querySelectorAll('[data-parallax]');
-        parallaxElements.forEach(element => {
-            const speed = element.dataset.parallax || 0.5;
-            const yPos = -(window.pageYOffset * speed);
-            element.style.transform = `translateY(${yPos}px)`;
+        // Skill items
+        document.querySelectorAll('.skill-item').forEach((item, index) => {
+            item.classList.add('animate-fade-in');
+            item.style.animationDelay = `${index * 0.05}s`;
+        });
+    }
+
+    // Initialize animations
+    addAnimationClasses();
+
+    // Add hover animations
+    document.querySelectorAll('.hover-scale').forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            element.classList.add('scale-105');
+        });
+        element.addEventListener('mouseleave', () => {
+            element.classList.remove('scale-105');
         });
     });
-}
 
-// Smooth reveal for elements
-function initializeReveal() {
-    const revealElements = document.querySelectorAll('[data-reveal]');
-    
-    revealElements.forEach(element => {
-        const delay = element.dataset.revealDelay || 0;
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        
-        setTimeout(() => {
-            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
-        }, delay);
+    // Add loading animation
+    window.addEventListener('load', () => {
+        document.body.classList.add('loaded');
     });
-}
-
-// Initialize all animations when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    initializeAnimations();
-    initializeParallax();
-    initializeReveal();
 }); 
