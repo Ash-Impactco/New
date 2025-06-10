@@ -47,10 +47,7 @@
 .hero {
     position: relative;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
+    overflow: hidden;
 }
 
 .hero-image {
@@ -136,10 +133,10 @@
 
 /* Images */
 img {
-    display: block;
     max-width: 100%;
     height: auto;
-    object-fit: contain;
+    display: block;
+    object-fit: cover;
 }
 
 .rounded-lg {
@@ -320,6 +317,10 @@ body {
     .grid-cols-2 {
         grid-template-columns: 1fr;
     }
+
+    .hero-image {
+        height: 60vh;
+    }
 }
 
 /* Card Hover Effects */
@@ -441,10 +442,14 @@ body {
 
 /* Company Logo Specific Styles */
 .company-logo {
-    max-height: 80px;
-    width: auto;
-    margin: 0 auto;
-    display: block;
+    max-height: 100px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.company-logo:hover {
+    filter: grayscale(0%);
 }
 
 /* Image Container Styles */
@@ -467,4 +472,94 @@ body {
     .image-container {
         min-height: 80px;
     }
+}
+
+/* Base styles */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --text-color: #333;
+  --light-bg: #f8f9fa;
+  --dark-bg: #343a40;
+  --transition-speed: 0.3s;
+}
+
+/* Asset path handling */
+[src^="assets/"] {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Profile images */
+.profile-image {
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed);
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+/* Project images */
+.project-image {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed);
+}
+
+.project-image:hover {
+  transform: scale(1.02);
+}
+
+/* Image error handling */
+img[src=""] {
+  display: none;
+}
+
+img:not([src]) {
+  display: none;
+}
+
+/* Asset path specific styles */
+[src*="assets/profile/"] {
+  border-radius: 50%;
+}
+
+[src*="assets/projects/"] {
+  border-radius: 8px;
+}
+
+[src*="assets/companies/"] {
+  max-height: 100px;
+}
+
+[src*="assets/ventures/"] {
+  border-radius: 4px;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn var(--transition-speed);
+}
+
+.slide-up {
+  animation: slideUp var(--transition-speed);
+}
+
+.scale-in {
+  animation: scaleIn var(--transition-speed);
+}
+
+/* Keyframes */
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 } 
