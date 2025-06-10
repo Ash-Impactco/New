@@ -148,6 +148,65 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Handle image loading
+    const images = document.querySelectorAll('img[src^="assets/"]');
+    images.forEach(img => {
+        // Add loading class
+        img.classList.add('image-loading');
+        
+        // Handle successful load
+        img.onload = () => {
+            img.classList.remove('image-loading');
+            img.classList.add('image-loaded');
+            img.classList.add('fade-in');
+        };
+        
+        // Handle load error
+        img.onerror = () => {
+            console.error(`Failed to load image: ${img.src}`);
+            img.classList.add('image-error');
+            // Set a fallback image or hide the element
+            img.style.display = 'none';
+        };
+    });
+
+    // Lazy loading for images
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+
+    // Add hover effects for project images
+    document.querySelectorAll('.project-image').forEach(img => {
+        img.addEventListener('mouseenter', () => {
+            img.style.transform = 'scale(1.05)';
+        });
+        img.addEventListener('mouseleave', () => {
+            img.style.transform = 'scale(1)';
+        });
+    });
+
+    // Add hover effects for company logos
+    document.querySelectorAll('.company-logo').forEach(img => {
+        img.addEventListener('mouseenter', () => {
+            img.style.filter = 'grayscale(0%)';
+        });
+        img.addEventListener('mouseleave', () => {
+            img.style.filter = 'grayscale(100%)';
+        });
+    });
 });
 
 // Add animation classes when elements come into view
