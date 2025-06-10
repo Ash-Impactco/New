@@ -1,6 +1,14 @@
 /* Main Styles */
 .section {
     padding: 4rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .section-header {
@@ -16,11 +24,23 @@
 
 .nav-link {
     color: #4a5568;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
+    position: relative;
 }
 
-.nav-link:hover {
-    color: #2b6cb0;
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #2b6cb0;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
 }
 
 /* Hero Section */
@@ -53,6 +73,12 @@
     background: white;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Collapsible Sections */
@@ -66,20 +92,46 @@
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
     width: 100%;
+    transition: background-color 0.3s ease;
+    position: relative;
 }
 
 .collapsible:hover {
     background-color: #e2e8f0;
 }
 
+.collapsible.active {
+    background-color: #e2e8f0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.collapsible::after {
+    content: '+';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.collapsible.active::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
 .content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    background-color: white;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    padding: 0 1rem;
 }
 
 .content.show {
     max-height: 2000px;
+    padding: 1rem;
 }
 
 /* Images */
@@ -87,6 +139,11 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.02);
 }
 
 .rounded-lg {
@@ -205,11 +262,6 @@ img {
 }
 
 /* Custom Styles */
-.section {
-    padding: 2rem 0;
-    border-bottom: 1px solid #e5e7eb;
-}
-
 .section:last-child {
     border-bottom: none;
 }
@@ -255,13 +307,136 @@ body {
     padding: 0 1rem;
 }
 
-/* Responsive Design */
+/* Mobile Responsive Styles */
 @media (max-width: 768px) {
     .section {
         padding: 1.5rem 0;
     }
-    
+
     .collapsible {
         padding: 0.75rem;
     }
-} 
+
+    .content.show {
+        padding: 0.75rem;
+    }
+
+    .grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Card Hover Effects */
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Link Styles */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #2b6cb0;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Section Transitions */
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Experience Section Specific Styles */
+.experience-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.experience-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.experience-image {
+    transition: transform 0.3s ease;
+    object-fit: contain;
+    background-color: white;
+    padding: 0.5rem;
+}
+
+.experience-image:hover {
+    transform: scale(1.05);
+}
+
+/* List Styles */
+.list-disc {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.list-disc li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Card Content Spacing */
+.card p {
+    margin-bottom: 0.75rem;
+}
+
+.card ul {
+    margin-top: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .experience-card {
+        padding: 1rem;
+    }
+    
+    .experience-image {
+        max-width: 120px;
+        margin: 0 auto;
+    }
+    
+    .card ul {
+        padding-left: 1rem;
+    }
+}
+
+/* Animation for Experience Cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.experience-card {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Staggered Animation for Multiple Cards */
+.experience-card:nth-child(1) { animation-delay: 0.1s; }
+.experience-card:nth-child(2) { animation-delay: 0.2s; }
+.experience-card:nth-child(3) { animation-delay: 0.3s; }
+.experience-card:nth-child(4) { animation-delay: 0.4s; }
+.experience-card:nth-child(5) { animation-delay: 0.5s; } 
