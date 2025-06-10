@@ -1,118 +1,168 @@
-// Utility functions for the portfolio
-
-// Debounce function for performance optimization
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Throttle function for scroll events
-function throttle(func, limit) {
-    let inThrottle;
-    return function(...args) {
-        if (!inThrottle) {
-            func.apply(this, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    }
-}
-
-// Check if element is in viewport
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
-
-// Format date to readable string
-function formatDate(date) {
-    return new Date(date).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    });
-}
-
-// Copy text to clipboard
-function copyToClipboard(text) {
-    return navigator.clipboard.writeText(text).then(() => {
-        return true;
-    }).catch(() => {
-        return false;
-    });
-}
-
-// Generate random ID
-function generateId(prefix = '') {
-    return `${prefix}${Math.random().toString(36).substr(2, 9)}`;
-}
-
-// Check if device is mobile
-function isMobile() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
-
-// Get current scroll position
-function getScrollPosition() {
-    return {
-        x: window.pageXOffset,
-        y: window.pageYOffset
-    };
-}
-
-// Handle image loading errors
-function handleImageError(img) {
-    img.onerror = null;
-    img.src = 'Assets/placeholder.png';
-    img.alt = 'Image not available';
-}
-
-// Add loading state to buttons
-function setLoadingState(button, isLoading) {
-    if (isLoading) {
-        button.disabled = true;
-        button.dataset.originalText = button.textContent;
-        button.innerHTML = '<span class="loading-spinner"></span> Loading...';
-    } else {
-        button.disabled = false;
-        button.textContent = button.dataset.originalText;
-    }
-}
-
-// Smooth scroll to element
-function scrollToElement(elementId) {
-    const element = document.getElementById(elementId);
-    if (element) {
-        element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+// Main JavaScript functionality
+document.addEventListener('DOMContentLoaded', () => {
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('-translate-y-full');
         });
     }
-}
 
-// Export utilities
-window.utils = {
-    debounce,
-    throttle,
-    isInViewport,
-    formatDate,
-    copyToClipboard,
-    generateId,
-    isMobile,
-    getScrollPosition,
-    handleImageError,
-    setLoadingState,
-    scrollToElement
-}; 
+    // Collapsible sections with smooth transitions
+    const collapsibles = document.querySelectorAll('.collapsible');
+    collapsibles.forEach(collapsible => {
+        collapsible.addEventListener('click', () => {
+            // Close all other sections
+            collapsibles.forEach(otherCollapsible => {
+                if (otherCollapsible !== collapsible) {
+                    otherCollapsible.classList.remove('active');
+                    const otherContent = otherCollapsible.nextElementSibling;
+                    if (otherContent) {
+                        otherContent.style.maxHeight = null;
+                        otherContent.classList.remove('show');
+                    }
+                }
+            });
+
+            // Toggle current section
+            collapsible.classList.toggle('active');
+            const content = collapsible.nextElementSibling;
+            if (content) {
+                if (content.classList.contains('show')) {
+                    content.style.maxHeight = null;
+                    content.classList.remove('show');
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    content.classList.add('show');
+                }
+            }
+        });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Close mobile menu if open
+                if (mobileMenu && !mobileMenu.classList.contains('-translate-y-full')) {
+                    mobileMenu.classList.add('-translate-y-full');
+                }
+            }
+        });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (mobileMenu && !mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+            mobileMenu.classList.add('-translate-y-full');
+        }
+    });
+
+    // Add active class to current section in navigation
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function setActiveLink() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('text-blue-600');
+            if (link.getAttribute('href').slice(1) === current) {
+                link.classList.add('text-blue-600');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', setActiveLink);
+    setActiveLink(); // Initial call
+
+    // Initialize scroll reveal animations
+    const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+    const scrollRevealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    scrollRevealElements.forEach(element => {
+        scrollRevealObserver.observe(element);
+    });
+
+    // Experience Section Animations and Interactions
+    // Add experience-card class to all experience cards
+    const experienceCards = document.querySelectorAll('#experience .card');
+    experienceCards.forEach(card => {
+        card.classList.add('experience-card');
+    });
+
+    // Add experience-image class to all experience images
+    const experienceImages = document.querySelectorAll('#experience img');
+    experienceImages.forEach(img => {
+        img.classList.add('experience-image');
+    });
+
+    // Intersection Observer for experience cards
+    const experienceObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                experienceObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    experienceCards.forEach(card => {
+        experienceObserver.observe(card);
+    });
+
+    // Smooth scroll to experience section
+    document.querySelectorAll('a[href="#experience"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const experienceSection = document.getElementById('experience');
+            if (experienceSection) {
+                experienceSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
+
+// Add animation classes when elements come into view
+const observerOptions = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.section').forEach(section => {
+    observer.observe(section);
+}); 
