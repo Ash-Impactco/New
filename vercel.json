@@ -45,62 +45,42 @@
     ],
     "cleanUrls": true,
     "trailingSlash": false,
-    "routes": [
+    "rewrites": [
       {
-        "src": "/assets/(.*)",
-        "dest": "/assets/$1",
-        "headers": {
-          "cache-control": "public, max-age=31536000, immutable"
-        }
+        "source": "/assets/(.*)",
+        "destination": "/assets/$1"
       },
       {
-        "src": "/assets/Companies/(.*)",
-        "dest": "/assets/Companies/$1",
-        "headers": {
-          "cache-control": "public, max-age=31536000, immutable"
-        }
+        "source": "/assets/Companies/(.*)",
+        "destination": "/assets/Companies/$1"
       },
       {
-        "src": "/assets/Profile/(.*)",
-        "dest": "/assets/Profile/$1",
-        "headers": {
-          "cache-control": "public, max-age=31536000, immutable"
-        }
+        "source": "/assets/Profile/(.*)",
+        "destination": "/assets/Profile/$1"
       },
       {
-        "src": "/assets/Projects/(.*)",
-        "dest": "/assets/Projects/$1",
-        "headers": {
-          "cache-control": "public, max-age=31536000, immutable"
-        }
+        "source": "/assets/Projects/(.*)",
+        "destination": "/assets/Projects/$1"
       },
       {
-        "src": "/assets/University/(.*)",
-        "dest": "/assets/University/$1",
-        "headers": {
-          "cache-control": "public, max-age=31536000, immutable"
-        }
+        "source": "/assets/University/(.*)",
+        "destination": "/assets/University/$1"
       },
       {
-        "src": "/assets/Ventures/(.*)",
-        "dest": "/assets/Ventures/$1",
-        "headers": {
-          "cache-control": "public, max-age=31536000, immutable"
-        }
+        "source": "/assets/Ventures/(.*)",
+        "destination": "/assets/Ventures/$1"
       },
       {
-        "src": "/assets/Clean tech/(.*)",
-        "dest": "/assets/Clean tech/$1",
-        "headers": {
-          "cache-control": "public, max-age=31536000, immutable"
-        }
+        "source": "/assets/Clean tech/(.*)",
+        "destination": "/assets/Clean tech/$1"
       },
       {
-        "handle": "filesystem"
+        "source": "/assets/Resume/(.*)",
+        "destination": "/assets/Resume/$1"
       },
       {
-        "src": "/(.*)",
-        "dest": "/index.html"
+        "source": "/(.*)",
+        "destination": "/index.html"
       }
     ]
   }
