@@ -6,17 +6,94 @@
         "use": "@vercel/static"
       }
     ],
+    "headers": [
+      {
+        "source": "/(.*)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "/assets/(.*)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          },
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
+      },
+      {
+        "source": "/(.*)\\.(jpg|jpeg|png|gif|ico|svg|webp)$",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          },
+          {
+            "key": "Content-Type",
+            "value": "image/$1"
+          }
+        ]
+      }
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false,
     "routes": [
       {
         "src": "/assets/(.*)",
-        "dest": "/assets/$1"
+        "dest": "/assets/$1",
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable"
+        }
       },
       {
-        "handle": "filesystem"
+        "src": "/assets/Companies/(.*)",
+        "dest": "/assets/Companies/$1",
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable"
+        }
       },
       {
-        "src": "/(.*)",
-        "dest": "/index.html"
+        "src": "/assets/Profile/(.*)",
+        "dest": "/assets/Profile/$1",
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable"
+        }
+      },
+      {
+        "src": "/assets/Projects/(.*)",
+        "dest": "/assets/Projects/$1",
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable"
+        }
+      },
+      {
+        "src": "/assets/University/(.*)",
+        "dest": "/assets/University/$1",
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable"
+        }
+      },
+      {
+        "src": "/assets/Ventures/(.*)",
+        "dest": "/assets/Ventures/$1",
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable"
+        }
+      },
+      {
+        "src": "/assets/Clean tech/(.*)",
+        "dest": "/assets/Clean tech/$1",
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable"
+        }
       }
     ]
   }
