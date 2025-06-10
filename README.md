@@ -16,14 +16,40 @@ A modern, responsive portfolio website showcasing professional experience, skill
   - Ventures
   - Skills
   - Contact
+- Image optimization and lazy loading
+- Smooth animations and transitions
+- Download CV functionality
+- Mobile-first approach
 
 ## Technologies Used
 
 - HTML5
 - CSS3 (with Tailwind CSS)
-- JavaScript
+- JavaScript (ES6+)
 - Font Awesome Icons
 - Google Fonts
+- Vercel for deployment
+
+## Project Structure
+
+```
+portfolio/
+├── index.html          # Main HTML file
+├── css/               # CSS files
+│   ├── styles.css     # Main styles and layout
+│   └── animations.css # Animation and transition styles
+├── js/                # JavaScript files
+│   ├── main.js        # Core functionality and event handlers
+│   ├── animations.js  # Animation and scroll effects
+│   └── utils.js       # Utility functions and helpers
+├── Assets/            # Images and other assets
+│   ├── Companies/     # Company logos and brand assets
+│   ├── Clean tech/    # Project and technology images
+│   └── Education/     # University and education images
+├── README.md          # Project documentation
+├── vercel.json        # Vercel deployment configuration
+└── .gitignore         # Git ignore file
+```
 
 ## Local Development
 
@@ -46,7 +72,7 @@ This portfolio is configured for deployment on Vercel. Follow these steps to dep
 1. Push your code to GitHub:
 ```bash
 git add .
-git commit -m "Initial commit"
+git commit -m "Update portfolio"
 git push origin main
 ```
 
@@ -63,25 +89,13 @@ git push origin main
 
 3. Your site will be deployed to a URL like: `https://new-ash-impactco.vercel.app`
 
-## Project Structure
+## Vercel Configuration
 
-```
-portfolio/
-├── index.html          # Main HTML file
-├── css/               # CSS files
-│   ├── styles.css     # Main styles
-│   └── animations.css # Animation styles
-├── js/                # JavaScript files
-│   ├── main.js        # Main functionality
-│   ├── animations.js  # Animation handling
-│   └── utils.js       # Utility functions
-├── Assets/            # Images and other assets
-│   ├── Companies/     # Company logos
-│   └── Clean tech/    # Project images
-├── README.md          # Project documentation
-├── vercel.json        # Vercel configuration
-└── .gitignore         # Git ignore file
-```
+The `vercel.json` file includes:
+- Static file serving
+- Cache control headers
+- Clean URLs
+- No trailing slashes
 
 ## Customization
 
@@ -91,6 +105,15 @@ To customize this portfolio:
 2. Replace images in the `Assets` directory
 3. Modify colors and styles in the CSS files
 4. Update links and social media handles
+5. Add or modify sections as needed
+
+## Performance Optimization
+
+- Images are optimized for web
+- CSS and JavaScript are minified
+- Lazy loading for images
+- Efficient animations
+- Mobile-first responsive design
 
 ## Contact
 
@@ -100,4 +123,4 @@ For any questions or suggestions, please reach out:
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE). 
+This project is open source and available under the [MIT License](LICENSE).
