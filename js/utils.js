@@ -72,12 +72,66 @@ function getScrollPosition() {
     };
 }
 
-// Handle image loading errors
-function handleImageError(img) {
-    img.onerror = null;
-    img.src = 'Assets/placeholder.png';
-    img.alt = 'Image not available';
-}
+// Image path utilities
+const getImagePath = (path) => {
+    // Ensure path starts with assets/
+    if (!path.startsWith('assets/')) {
+        path = `assets/${path}`;
+    }
+    return path;
+};
+
+// Image loading utilities
+const loadImage = (src) => {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = () => reject(new Error(`Failed to load image: ${src}`));
+        img.src = getImagePath(src);
+    });
+};
+
+// Image error handling
+const handleImageError = (img) => {
+    console.error(`Failed to load image: ${img.src}`);
+    img.classList.add('image-error');
+    img.style.display = 'none';
+};
+
+// Image optimization
+const optimizeImage = (img) => {
+    // Add loading class
+    img.classList.add('image-loading');
+    
+    // Handle successful load
+    img.onload = () => {
+        img.classList.remove('image-loading');
+        img.classList.add('image-loaded');
+        img.classList.add('fade-in');
+    };
+    
+    // Handle load error
+    img.onerror = () => handleImageError(img);
+};
+
+// Lazy loading setup
+const setupLazyLoading = () => {
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+};
 
 // Add loading state to buttons
 function setLoadingState(button, isLoading) {
