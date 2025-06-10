@@ -18,6 +18,8 @@ yarn-error.log*
 node_modules/
 package-lock.json
 yarn.lock
+.pnp
+.pnp.js
 
 # Build files
 dist/
@@ -33,4 +35,12 @@ out/
 .env.production.local
 
 # Vercel
-.vercel 
+.vercel
+.now
+
+# Testing
+coverage/
+
+# Misc
+*.swp
+*.swo 
