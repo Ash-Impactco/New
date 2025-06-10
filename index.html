@@ -81,6 +81,23 @@
         .content.show {
             max-height: 2000px;
         }
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+        .shadow-md {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .w-full {
+            width: 100%;
+        }
+        .h-auto {
+            height: auto;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -92,10 +109,12 @@
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="nav-link">Home</a>
                     <a href="#about" class="nav-link">About</a>
-                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#skills" class="nav-link">Skills</a>
                     <a href="#experience" class="nav-link">Experience</a>
                     <a href="#projects" class="nav-link">Projects</a>
                     <a href="#ventures" class="nav-link">Ventures</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#certifications" class="nav-link">Certifications</a>
                     <a href="#contact" class="nav-link">Contact</a>
                 </div>
                 <button class="md:hidden" id="mobile-menu-button">
@@ -111,10 +130,12 @@
             <div class="flex flex-col space-y-4">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="#education" class="nav-link">Education</a>
+                <a href="#skills" class="nav-link">Skills</a>
                 <a href="#experience" class="nav-link">Experience</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#ventures" class="nav-link">Ventures</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
         </div>
@@ -186,6 +207,19 @@
                             <h3 class="text-xl font-semibold text-gray-800">University of Twente</h3>
                             <p class="text-gray-600">MSc in Environmental and Energy Management</p>
                             <p class="text-gray-700 mt-2">Specialized in sustainable development and environmental management.</p>
+                            <div class="mt-4">
+                                <h4 class="font-semibold text-gray-800">Relevant Coursework:</h4>
+                                <ul class="list-disc list-inside text-gray-600 mt-2 space-y-2">
+                                    <li>Energy Management – Analyzed renewable energy systems, corporate energy strategies, and sustainable infrastructure planning. Worked with tools like HOMER Energy and RETScreen for scenario modeling and project feasibility.</li>
+                                    <li>Digitalisation & Sustainability – Studied how digital tools accelerate clean-tech deployment. Gained experience using Power BI for sustainability data analysis and Python for basic energy data scripting.</li>
+                                    <li>Case Project in Energy Management – Led a team-based project tackling a real-world grid congestion issue. Applied GIS (QGIS) for spatial energy mapping and Excel VBA for custom ROI and emissions modeling.</li>
+                                </ul>
+                                <div class="mt-4">
+                                    <a href="https://www.omropfryslan.nl/nl/nieuws/1144457/internationale-studenten-duurzame-aanpak-in-fryslan-is-mogelijk" target="_blank" class="text-blue-600 hover:text-blue-800">
+                                        <i class="fas fa-external-link-alt"></i> View Geothermal Energy Project Publication
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -199,6 +233,14 @@
                             <h3 class="text-xl font-semibold text-gray-800">Amity University</h3>
                             <p class="text-gray-600">BSc in Environmental Science</p>
                             <p class="text-gray-700 mt-2">Focused on environmental studies and sustainable development.</p>
+                            <div class="mt-4">
+                                <h4 class="font-semibold text-gray-800">Relevant Bachelor's Coursework & Certifications:</h4>
+                                <ul class="list-disc list-inside text-gray-600 mt-2 space-y-2">
+                                    <li>Environmental Impact Assessment (EIA) – Applied EIA frameworks to assess and mitigate environmental risks in real-world project scenarios.</li>
+                                    <li>Geographic Information Systems (GIS) – Developed spatial analysis skills using GIS tools for environmental monitoring and clean-tech site planning.</li>
+                                    <li>ISO 14001 & NEBOSH (IGC) – Completed training in environmental management systems (ISO 14001) and international health, safety, and environmental compliance (NEBOSH IGC) during university.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -240,50 +282,6 @@
                             <div class="flex items-center space-x-2">
                                 <i class="fas fa-map-marked-alt text-blue-600"></i>
                                 <span>GIS</span>
-                            </div>
-                            <div class="flex items-center space-x-2">
-                                <i class="fas fa-wind text-blue-600"></i>
-                                <span>HOMER Energy</span>
-                            </div>
-                            <div class="flex items-center space-x-2">
-                                <i class="fas fa-solar-panel text-blue-600"></i>
-                                <span>RETScreen</span>
-                            </div>
-                            <div class="flex items-center space-x-2">
-                                <i class="fas fa-chart-line text-blue-600"></i>
-                                <span>Carbon Analytics</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Marketing & Demand Generation -->
-                <button class="collapsible w-full text-left">
-                    <h3 class="text-xl font-bold">Marketing & Demand Generation</h3>
-                </button>
-                <div class="content">
-                    <div class="card p-6">
-                        <h4 class="font-semibold text-gray-700 mb-4">Tools</h4>
-                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                            <div class="flex items-center space-x-2">
-                                <i class="fab fa-hubspot text-blue-600"></i>
-                                <span>HubSpot</span>
-                            </div>
-                            <div class="flex items-center space-x-2">
-                                <i class="fab fa-salesforce text-blue-600"></i>
-                                <span>Salesforce</span>
-                            </div>
-                            <div class="flex items-center space-x-2">
-                                <i class="fas fa-envelope text-blue-600"></i>
-                                <span>Mailchimp</span>
-                            </div>
-                            <div class="flex items-center space-x-2">
-                                <i class="fas fa-headset text-blue-600"></i>
-                                <span>Zendesk</span>
-                            </div>
-                            <div class="flex items-center space-x-2">
-                                <i class="fas fa-bullhorn text-blue-600"></i>
-                                <span>Coldoutreach</span>
                             </div>
                         </div>
                     </div>
@@ -356,41 +354,75 @@
 
     <!-- Certifications Section -->
     <section id="certifications" class="section">
-        <h2 class="text-3xl font-bold mb-6">Certifications</h2>
-        <div class="max-w-4xl mx-auto space-y-4">
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold text-gray-800">PROJECT MANAGEMENT BY GOOGLE</h3>
-                <p class="text-gray-600">Google</p>
+        <div class="container mx-auto px-4">
+            <div class="section-header">
+                <h2>Certifications</h2>
             </div>
+            <div class="max-w-4xl mx-auto space-y-4">
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">Professional Certifications</h3>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-certificate text-blue-600 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">PROJECT MANAGEMENT BY GOOGLE</h4>
+                                    <p class="text-gray-600">Google</p>
+                                </div>
+                            </div>
 
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold text-gray-800">NEGOTIATION</h3>
-                <p class="text-gray-600">University of Yale</p>
-            </div>
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-certificate text-blue-600 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">NEGOTIATION</h4>
+                                    <p class="text-gray-600">University of Yale</p>
+                                </div>
+                            </div>
 
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold text-gray-800">GENERATIVE AI FOR DIGITAL MARKETERS</h3>
-                <p class="text-gray-600">LinkedIn</p>
-            </div>
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-certificate text-blue-600 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">GENERATIVE AI FOR DIGITAL MARKETERS</h4>
+                                    <p class="text-gray-600">LinkedIn</p>
+                                </div>
+                            </div>
 
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold text-gray-800">NEBOSH INTERNATIONAL GENERAL CERTIFICATE IN OCCUPATIONAL HEALTH AND SAFETY</h3>
-                <p class="text-gray-600">NEBOSH</p>
-            </div>
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-certificate text-blue-600 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">NEBOSH INTERNATIONAL GENERAL CERTIFICATE IN OCCUPATIONAL HEALTH AND SAFETY</h4>
+                                    <p class="text-gray-600">NEBOSH</p>
+                                </div>
+                            </div>
 
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold text-gray-800">ISO 14001:2015 LEAD AUDITOR FOR ENVIRONMENTAL MANAGEMENT SYSTEM</h3>
-                <p class="text-gray-600">IRCA</p>
-            </div>
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-certificate text-blue-600 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">ISO 14001:2015 LEAD AUDITOR FOR ENVIRONMENTAL MANAGEMENT SYSTEM</h4>
+                                    <p class="text-gray-600">IRCA</p>
+                                </div>
+                            </div>
 
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold text-gray-800">HubSpot Inbound Marketing</h3>
-                <p class="text-gray-600">HubSpot Academy</p>
-            </div>
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-certificate text-blue-600 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">HubSpot Inbound Marketing</h4>
+                                    <p class="text-gray-600">HubSpot Academy</p>
+                                </div>
+                            </div>
 
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold text-gray-800">Google Analytics Certification</h3>
-                <p class="text-gray-600">Google</p>
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-certificate text-blue-600 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Google Analytics Certification</h4>
+                                    <p class="text-gray-600">Google</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -403,83 +435,105 @@
             </div>
             <div class="max-w-4xl mx-auto space-y-6">
                 <button class="collapsible w-full text-left">
-                    <h3 class="text-xl font-bold">Clean Tech Marketer</h3>
-                    <p class="text-gray-600">April 2025 - Present</p>
-                </button>
-                <div class="content">
-                    <div class="mb-6">
-                        <h3 class="text-xl font-semibold text-gray-800">Clean Tech Marketer</h3>
-                        <p class="text-gray-600">April 2025 - Present</p>
-                        <ul class="list-disc list-inside mt-2 text-gray-700">
-                            <li>Executed full-funnel B2B demand generation campaigns for early-stage climate tech startups including Windcredibles, ProClime, and Beyond Sustainability, driving a 2× increase in SQLs and contributing in pipeline.</li>
-                            <li>Reduced CAC by 10% through SEO, Google Ads, and LinkedIn campaigns under Cleantech Growthlab, generating 20,000+ impressions and 300+ top-of-funnel conversions.</li>
-                            <li>Built ABM workflows and email nurture sequences in HubSpot, improving engagement and aligning GTM strategies across sustainability, energy, and mobility sectors.</li>
-                            <li>Conducted SEO audits and content updates that boosted site traffic by 40% and improved MQL conversion for clean energy and circular economy clients.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <button class="collapsible w-full text-left">
-                    <h3 class="text-xl font-bold">BUSINESS DEVELOPMENT MANAGER</h3>
-                    <p class="text-gray-600">National Chromatography Inco, Europe (Oct 2022 - May 2024)</p>
+                    <h3 class="text-xl font-bold">Experience</h3>
                 </button>
                 <div class="content">
                     <div class="card p-6">
-                        <ul class="list-disc list-inside text-gray-600 space-y-3">
-                            <li>Acquired consistent new business with well-formulated and executed strategies based on market expertise.</li>
-                            <li>Collaborated with sales and business development teams to fulfill bids, RFP, and tender under strict timelines.</li>
-                            <li>Contributed to bottom line revenue by attaining 80% of sales quota.</li>
-                            <li>Revitalized marketing efforts employing streamlined processes and rebranding initiatives.</li>
-                            <li>Prospected and qualified marketing leads from the pharmaceutical industry using Salesforce CRM attaining conversion rates of 13%.</li>
-                            <li>Ampified international sales by selling pharmaceutical stocks worth $35k across North America and South Asia.</li>
-                            <li>Liaised with directors, R&D team, sales and procurement team, dispatch and management teams through weekly and monthly meetings.</li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="space-y-6">
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="md:w-1/4">
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <img src="Assets/Clean tech/download (3).png" alt="Clean Tech 1" class="w-full h-auto rounded-lg shadow-md">
+                                        <img src="Assets/Clean tech/download (4).png" alt="Clean Tech 2" class="w-full h-auto rounded-lg shadow-md">
+                                        <img src="Assets/Clean tech/download.jpeg" alt="Clean Tech 3" class="w-full h-auto rounded-lg shadow-md">
+                                        <img src="Assets/vestaearth_cover.jpeg" alt="Clean Tech 4" class="w-full h-auto rounded-lg shadow-md">
+                                    </div>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4 class="font-semibold text-gray-800">Clean Tech Marketer</h4>
+                                    <p class="text-gray-600">Freelance, Porto (April 2025 - Present)</p>
+                                    <ul class="list-disc list-inside text-gray-600 space-y-2 mt-2">
+                                        <li>Executed full-funnel B2B demand generation campaigns for early-stage climate tech startups including Windcredibles, ProClime, and Beyond Sustainability, driving a 2× increase in SQLs and contributing in pipeline</li>
+                                        <li>Reduced CAC by 10% through SEO, Google Ads, and LinkedIn campaigns under Cleantech Growthlab, generating 20,000+ impressions and 300+ top-of-funnel conversions</li>
+                                        <li>Built ABM workflows and email nurture sequences in HubSpot, improving engagement and aligning GTM strategies across sustainability, energy, and mobility sectors</li>
+                                        <li>Conducted SEO audits and content updates that boosted site traffic by 40% and improved MQL conversion for clean energy</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                <button class="collapsible w-full text-left">
-                    <h3 class="text-xl font-bold">CLIENT RELATIONSHIP SPECIALIST</h3>
-                    <p class="text-gray-600">Eurail, Netherlands (Sept 2022 - Aug 2023)</p>
-                </button>
-                <div class="content">
-                    <div class="card p-6">
-                        <ul class="list-disc list-inside text-gray-600 space-y-3">
-                            <li>Addressed customer inquiries through phone, email, and chat channels.</li>
-                            <li>Diagnosed and troubleshooted customer problems while delivering technical assistance.</li>
-                            <li>Monitored and escalated complex bet disputes to RFBA, CRM, or OPS teams using 9 Wickets.</li>
-                            <li>Assisted over 300 clients monthly with account registrations, deposits, and withdrawals.</li>
-                            <li>Managed a portfolio of 150+ VIP customers, conducting telemarketing campaigns that resulted in a 20% increase in high-value customer engagement.</li>
-                            <li>Promoted new bonuses and offers, leading to the reactivation of 30% of dormant VIP accounts across targeted regions.</li>
-                        </ul>
-                    </div>
-                </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="md:w-1/4">
+                                    <img src="Assets/Scores and Levels.png" alt="Scores and Levels" class="w-full h-auto rounded-lg shadow-md">
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4 class="font-semibold text-gray-800">Customer Success & Marketing Specialist</h4>
+                                    <p class="text-gray-600">Porto Marketing (June 2024 - April 2025)</p>
+                                    <ul class="list-disc list-inside text-gray-600 space-y-2 mt-2">
+                                        <li>Collaborated with the marketing team to develop data-driven promotional strategies using HubSpot, leading to a 25% increase in customer retention across all regions</li>
+                                        <li>Executed bulk messaging campaigns targeting 10,000+ clients, driving a 15% uplift in player engagement and a 10% increase in deposits</li>
+                                        <li>Oversaw player engagement and retention initiatives, contributing to a 20% overall growth in customer lifetime value across Asian, African, and Brazilian markets</li>
+                                        <li>Handled over 100 customer inquiries daily via chat for iGaming platforms like Bet365, Bet Barter, Aposta Real, and Sky247, ensuring timely resolution of betting issues and account management</li>
+                                        <li>Monitored and escalated complex bet disputes to RFBA, CRM, or OPS teams using 9 Wickets, achieving a 95% resolution rate within 24 hours</li>
+                                        <li>Assisted over 300 clients monthly with account registrations, deposits, and withdrawals, contributing to a seamless user experience across Asian, African, and Brazilian markets</li>
+                                        <li>Managed a portfolio of 150+ VIP customers, conducting telemarketing campaigns that resulted in a 20% increase in high-value customer engagement</li>
+                                        <li>Promoted new bonuses and offers, leading to the reactivation of 30% of dormant VIP accounts across targeted regions</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                <button class="collapsible w-full text-left">
-                    <h3 class="text-xl font-bold">ENVIRONMENTAL ASSISTANT</h3>
-                    <p class="text-gray-600">MGK Aqua Inco, India (Nov 2020 - Aug 2021)</p>
-                </button>
-                <div class="content">
-                    <div class="card p-6">
-                        <ul class="list-disc list-inside text-gray-600 space-y-3">
-                            <li>Developed Detailed Project Reports (DPRs) on sustainability, climate change, GHG management, and energy efficiency for BOSCH, PepsiCo, and multiple textile and tanning companies.</li>
-                            <li>Led water treatment initiatives for 15+ residential and corporate projects by analyzing BOD, DO, TSS, and other parameters.</li>
-                            <li>Designed coagulant/flocculant specifications and supported the installation of drinking water setups, acoustic blowers, and ETPs.</li>
-                            <li>Conducted waste management training during corporate/public events and utilized Agile/Kanban methods for sales tracking and stakeholder engagement.</li>
-                        </ul>
-                    </div>
-                </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="md:w-1/4">
+                                    <img src="Assets/National Chromotogrpahy Inco.jpeg" alt="National Chromatography" class="w-full h-auto rounded-lg shadow-md">
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4 class="font-semibold text-gray-800">BUSINESS DEVELOPMENT MANAGER</h4>
+                                    <p class="text-gray-600">National Chromatography Inco, Europe (Oct 2022 - May 2024)</p>
+                                    <ul class="list-disc list-inside text-gray-600 space-y-2 mt-2">
+                                        <li>Acquired consistent new business with well-formulated and executed strategies based on market expertise</li>
+                                        <li>Collaborated with sales and business development teams to fulfill bids, RFP, and tender under strict timelines</li>
+                                        <li>Contributed to bottom line revenue by attaining 80% of sales quota</li>
+                                        <li>Revitalized marketing efforts employing streamlined processes and rebranding initiatives</li>
+                                        <li>Prospected and qualified marketing leads from the pharmaceutical industry using Salesforce CRM attaining conversion rates of 13%</li>
+                                        <li>Amplified international sales by selling pharmaceutical stocks worth $35k across North America and South Asia</li>
+                                        <li>Liaised with directors, R&D team, sales and procurement team, dispatch and management teams through weekly and monthly meetings</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                <button class="collapsible w-full text-left">
-                    <h3 class="text-xl font-bold">PROJECT ASSISTANT</h3>
-                    <p class="text-gray-600">UNICEF, Water Sanitation and Hygiene (WASH), India (Jul 2018 - Jun 2019)</p>
-                </button>
-                <div class="content">
-                    <div class="card p-6">
-                        <ul class="list-disc list-inside text-gray-600 space-y-3">
-                            <li>Communicated with government officials regarding environmental sustainability and GHG Management projects.</li>
-                            <li>Streamlined water testing by analyzing 63 parameters and integrated solar-powered stoves for over 10,000 tea estate residents.</li>
-                            <li>Modernized the preliminary designs for water pumps and beddings in 16 tea estates across Dibrugarh, Assam.</li>
-                        </ul>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="md:w-1/4">
+                                    <img src="Assets/Eurail.png" alt="Eurail" class="w-full h-auto rounded-lg shadow-md">
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4 class="font-semibold text-gray-800">CLIENT RELATIONSHIP SPECIALIST</h4>
+                                    <p class="text-gray-600">Eurail, Netherlands (Sept 2022 - Aug 2023)</p>
+                                    <ul class="list-disc list-inside text-gray-600 space-y-2 mt-2">
+                                        <li>Addressed customer inquiries through phone, email, and chat channels</li>
+                                        <li>Diagnosed and troubleshooted customer problems while delivering technical assistance</li>
+                                        <li>Monitored and escalated complex bet disputes to RFBA, CRM, or OPS teams using 9 Wickets</li>
+                                        <li>Assisted over 300 clients monthly with account registrations, deposits, and withdrawals</li>
+                                        <li>Managed a portfolio of 150+ VIP customers, conducting telemarketing campaigns that resulted in a 20% increase in high-value customer engagement</li>
+                                        <li>Promoted new bonuses and offers, leading to the reactivation of 30% of dormant VIP accounts across targeted regions</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="md:w-1/4">
+                                    <img src="Assets/Unicef.png" alt="UNICEF" class="w-full h-auto rounded-lg shadow-md">
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4 class="font-semibold text-gray-800">ENVIRONMENTAL ASSISTANT</h4>
+                                    <p class="text-gray-600">MGK Aqua Inco, India (Nov 2020 - Aug 2021)</p>
+                                    <ul class="list-disc list-inside text-gray-600 space-y-2 mt-2">
+                                        <li>Developed Detailed Project Reports (DPRs) on sustainability, climate change, GHG management, and energy efficiency for BOSCH, PepsiCo, and multiple textile and tanning companies</li>
+                                        <li>Led water treatment initiatives for 15+ residential and corporate projects by analyzing BOD, DO, TSS, and other parameters</li>
+                                        <li>Designed coagulant/flocculant specifications and supported the installation of drinking water setups, acoustic blowers, and ETPs</li>
+                                        <li>Conducted waste management training during corporate/public events and utilized Agile/Kanban methods for sales tracking and stakeholder engagement</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -514,14 +568,14 @@
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <div class="flex flex-col md:flex-row gap-6">
                         <div class="md:w-1/2">
-                            <img src="Assets/Salt Marshes.jpeg" alt="ERW Mangroves and Salt Marshes Project" class="w-full h-auto rounded-lg shadow-md">
+                            <img src="Assets/Mangroves.jpeg" alt="ERW Mangroves Project" class="w-full h-auto rounded-lg shadow-md">
                         </div>
                         <div class="md:w-1/2">
-                            <h3 class="text-xl font-semibold text-gray-800">ERW Mangroves and Salt Marshes</h3>
+                            <h3 class="text-xl font-semibold text-gray-800">ERW Mangroves</h3>
                             <p class="text-gray-600">Environmental Research Project</p>
-                            <p class="text-gray-700 mt-2">Conducted research on Enhanced Rock Weathering (ERW) in coastal ecosystems, focusing on mangroves and salt marshes. Analyzed carbon sequestration potential and ecosystem services of these critical coastal habitats.</p>
+                            <p class="text-gray-700 mt-2">Conducted research on Enhanced Rock Weathering (ERW) in mangrove ecosystems. Analyzed carbon sequestration potential and ecosystem services of these critical coastal habitats.</p>
                             <div class="mt-4">
-                                <a href="https://github.com/Ash-Impactco/ERW-Mangroves-SaltMarshes" target="_blank" class="text-blue-600 hover:text-blue-800">
+                                <a href="https://github.com/Ash-Impactco/ERW---Mangroves" target="_blank" class="text-blue-600 hover:text-blue-800">
                                     <i class="fab fa-github"></i> View Project
                                 </a>
                             </div>
@@ -529,77 +583,84 @@
                     </div>
                 </div>
 
-                <button class="collapsible w-full text-left">
-                    <h3 class="text-xl font-bold">ERW Use in Mangroves</h3>
-                </button>
-                <div class="content">
-                    <div class="card p-6">
-                        <p class="text-gray-600 mb-4">Research and implementation of Enhanced Rock Weathering in mangrove ecosystems</p>
-                        <a href="https://github.com/Ash-Impactco/ERW---Mangroves" target="_blank" class="text-blue-600 hover:text-blue-800">
-                            View on GitHub <i class="fas fa-external-link-alt ml-2"></i>
-                        </a>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="md:w-1/2">
+                            <img src="Assets/Salt Marshes.jpeg" alt="ERW Salt Marshes Project" class="w-full h-auto rounded-lg shadow-md">
+                        </div>
+                        <div class="md:w-1/2">
+                            <h3 class="text-xl font-semibold text-gray-800">ERW Salt Marshes</h3>
+                            <p class="text-gray-600">Environmental Research Project</p>
+                            <p class="text-gray-700 mt-2">Conducted research on Enhanced Rock Weathering (ERW) in salt marsh ecosystems. Analyzed carbon sequestration potential and ecosystem services of these critical coastal habitats.</p>
+                            <div class="mt-4">
+                                <a href="https://github.com/Ash-Impactco/Erw--Salt-Marshes" target="_blank" class="text-blue-600 hover:text-blue-800">
+                                    <i class="fab fa-github"></i> View Project
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <button class="collapsible w-full text-left">
-                    <h3 class="text-xl font-bold">ERW Use in Salt Marshes</h3>
-                </button>
-                <div class="content">
-                    <div class="card p-6">
-                        <p class="text-gray-600 mb-4">Research and implementation of Enhanced Rock Weathering in salt marsh ecosystems</p>
-                        <a href="https://github.com/Ash-Impactco/Erw--Salt-Marshes" target="_blank" class="text-blue-600 hover:text-blue-800">
-                            View on GitHub <i class="fas fa-external-link-alt ml-2"></i>
-                        </a>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="md:w-1/2">
+                            <img src="Assets/Geothermal.jpeg" alt="Geothermal Heat Grid Project" class="w-full h-auto rounded-lg shadow-md">
+                        </div>
+                        <div class="md:w-1/2">
+                            <h3 class="text-xl font-semibold text-gray-800">Upcoming Geothermal Heat Grid</h3>
+                            <p class="text-gray-600">Leeuwarden, Netherlands (Feb 2022 - Apr 2022)</p>
+                            <ul class="list-disc list-inside text-gray-600 space-y-3 mt-2">
+                                <li>Conducted comprehensive social impact assessment through interviews with 100 respondents</li>
+                                <li>Explored public concerns regarding integration of geothermal energy into existing heat grid</li>
+                                <li>Implemented DESSIN-ESS conceptual framework for qualitative data processing</li>
+                            </ul>
+                            <div class="mt-4">
+                                <a href="https://www.omropfryslan.nl/nl/nieuws/1144457/internationale-studenten-duurzame-aanpak-in-fryslan-is-mogelijk" target="_blank" class="text-blue-600 hover:text-blue-800">
+                                    <i class="fas fa-external-link-alt"></i> View Publication
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <button class="collapsible w-full text-left">
-                    <h3 class="text-xl font-bold">Upcoming Geothermal Heat Grid</h3>
-                    <p class="text-gray-600">Leeuwarden, Netherlands (Feb 2022 - Apr 2022)</p>
-                </button>
-                <div class="content">
-                    <div class="card p-6">
-                        <ul class="list-disc list-inside text-gray-600 space-y-3">
-                            <li>Conducted comprehensive social impact assessment through interviews with 100 respondents</li>
-                            <li>Explored public concerns regarding integration of geothermal energy into existing heat grid</li>
-                            <li>Implemented DESSIN-ESS conceptual framework for qualitative data processing</li>
-                            <li>Findings published by Omrop Fryslân: <a href="https://www.omropfryslan.nl/nl/nieuws/1144457/internationale-studenten-duurzame-aanpak-in-fryslan-is-mogelijk" target="_blank" class="text-blue-600 hover:text-blue-800">View Publication</a></li>
-                        </ul>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="md:w-1/2">
+                            <img src="Assets/Coral Bleaching.jpeg" alt="Coral Bleaching Status Project" class="w-full h-auto rounded-lg shadow-md">
+                        </div>
+                        <div class="md:w-1/2">
+                            <h3 class="text-xl font-semibold text-gray-800">Coral Bleaching Status</h3>
+                            <p class="text-gray-600">Andaman Islands, India (Dec 2017 - Feb 2018)</p>
+                            <ul class="list-disc list-inside text-gray-600 space-y-3 mt-2">
+                                <li>Conducted comprehensive SST analysis revealing 1°C temperature threshold above maximum monthly temperature</li>
+                                <li>Identified degradation of zooxanthellae-algae symbiosis due to thermal stress</li>
+                                <li>Developed Coral Bleaching Alert System (CBAS) using satellite-derived SST data</li>
+                                <li>Studied Acropora coral species degradation rate and SST correlation</li>
+                                <li>Presented findings to multiple stakeholders:
+                                    <ul class="ml-6 mt-2">
+                                        <li>ANET (Andaman Nicobar Environment Team)</li>
+                                        <li>Indian Wildlife Department</li>
+                                        <li>Indian Coast Guard of Andaman</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <button class="collapsible w-full text-left">
-                    <h3 class="text-xl font-bold">Coral Bleaching Status</h3>
-                    <p class="text-gray-600">Andaman Islands, India (Dec 2017 - Feb 2018)</p>
-                </button>
-                <div class="content">
-                    <div class="card p-6">
-                        <ul class="list-disc list-inside text-gray-600 space-y-3">
-                            <li>Conducted comprehensive SST analysis revealing 1°C temperature threshold above maximum monthly temperature</li>
-                            <li>Identified degradation of zooxanthellae-algae symbiosis due to thermal stress</li>
-                            <li>Developed Coral Bleaching Alert System (CBAS) using satellite-derived SST data</li>
-                            <li>Studied Acropora coral species degradation rate and SST correlation</li>
-                            <li>Presented findings to multiple stakeholders:
-                                <ul class="ml-6 mt-2">
-                                    <li>ANET (Andaman Nicobar Environment Team)</li>
-                                    <li>Indian Wildlife Department</li>
-                                    <li>Indian Coast Guard of Andaman</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <button class="collapsible w-full text-left">
-                    <h3 class="text-xl font-bold">EV-Charging App Pilot</h3>
-                    <p class="text-gray-600">SMOOV, Netherlands (Apr 2022 - Jul 2022)</p>
-                </button>
-                <div class="content">
-                    <div class="card p-6">
-                        <ul class="list-disc list-inside text-gray-600 space-y-3">
-                            <li>Specialized in creating fast & reliable charging location apps for EV drivers through traffic analysis, road quality estimation, urban planning, and seamless troubleshooting.</li>
-                            <li>Contributed to reversing Nitrogen Crisis with AMC and migration to cities.</li>
-                        </ul>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="md:w-1/2">
+                            <img src="Assets/SMOOB.png" alt="EV-Charging App Pilot" class="w-full h-auto rounded-lg shadow-md">
+                        </div>
+                        <div class="md:w-1/2">
+                            <h3 class="text-xl font-semibold text-gray-800">AutomanomousMobility Commerce </h3>
+                            <p class="text-gray-600">SMOOV, Netherlands (Apr 2022 - Jul 2022)</p>
+                            <ul class="list-disc list-inside text-gray-600 space-y-3 mt-2">
+                                <li>Specialized in creating fast & reliable charging location apps for EV drivers through traffic analysis, road quality estimation, urban planning, and seamless troubleshooting.</li>
+                                <li>Contributed to reversing Nitrogen Crisis with AMC and migration to cities.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -615,47 +676,58 @@
             </div>
             <div class="max-w-4xl mx-auto space-y-6">
                 <button class="collapsible w-full text-left">
-                    <h3 class="text-xl font-bold">INTRUSIVE THOUGHTS</h3>
-                    <p class="text-gray-600">2022 - Present</p>
+                    <h3 class="text-xl font-bold">Ventures</h3>
                 </button>
                 <div class="content">
                     <div class="card p-6">
-                        <ul class="list-disc list-inside text-gray-600 space-y-3">
-                            <li>Created Intrusive Thoughts, a platform to spread awareness about sustainable living and eco-friendly practices</li>
-                            <li>Share engaging content about climate change, renewable energy, and practical ways to live sustainably</li>
-                            <li>Organize workshops and campaigns to educate communities about environmental issues</li>
-                            <li>Follow us: <a href="https://linktr.ee/intrusivethoughtsftw" target="_blank" class="text-blue-600 hover:text-blue-800">Intrusive Thoughts</a></li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="space-y-6">
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="md:w-1/4">
+                                    <img src="Assets/Intrusivethoughtsftw.jpeg" alt="Intrusive Thoughts FTW" class="w-full h-auto rounded-lg shadow-md">
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4 class="font-semibold text-gray-800">INTRUSIVE THOUGHTS FTW</h4>
+                                    <p class="text-gray-600">2022 - Present</p>
+                                    <ul class="list-disc list-inside text-gray-600 space-y-2 mt-2">
+                                        <li>Created Intrusive Thoughts FTW, a platform to spread awareness about sustainable living and eco-friendly practices</li>
+                                        <li>Share engaging content about climate change, renewable energy, and practical ways to live sustainably</li>
+                                        <li>Organize workshops and campaigns to educate communities about environmental issues</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                <button class="collapsible w-full text-left">
-                    <h3 class="text-xl font-bold">BURRITO DELHI</h3>
-                    <p class="text-gray-600">2023 - Present</p>
-                </button>
-                <div class="content">
-                    <div class="card p-6">
-                        <ul class="list-disc list-inside text-gray-600 space-y-3">
-                            <li>Launched Burrito Delhi, a plant-based food venture that promotes sustainable eating</li>
-                            <li>Offer delicious vegan burritos made with locally-sourced, organic ingredients</li>
-                            <li>Implement food waste reduction strategies through precision cooking and composting</li>
-                            <li>Join us on: <a href="https://www.instagram.com/burrito_delhi/" target="_blank" class="text-blue-600 hover:text-blue-800">@burrito_delhi</a></li>
-                        </ul>
-                    </div>
-                </div>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="md:w-1/4">
+                                    <img src="Assets/Burrito Delhi.png" alt="Burrito Delhi" class="w-full h-auto rounded-lg shadow-md">
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4 class="font-semibold text-gray-800">BURRITO DELHI</h4>
+                                    <p class="text-gray-600">2022 - 2023</p>
+                                    <p class="text-gray-600 mb-2">Amsterdam, Netherlands</p>
+                                    <ul class="list-disc list-inside text-gray-600 space-y-2 mt-2">
+                                        <li>Founded and operated a Mexican food delivery service in Delhi</li>
+                                        <li>Managed operations, marketing, and customer service</li>
+                                        <li>Built a loyal customer base through quality food and service</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                <button class="collapsible w-full text-left">
-                    <h3 class="text-xl font-bold">ANNA KADUKAAN</h3>
-                    <p class="text-gray-600">2023 - Present</p>
-                </button>
-                <div class="content">
-                    <div class="card p-6">
-                        <ul class="list-disc list-inside text-gray-600 space-y-3">
-                            <li>Partnered in Anna Kadukaan, a vegan food venture that blends traditional Indian flavors with sustainable practices</li>
-                            <li>Transform traditional recipes into vegan delights while reducing carbon footprint</li>
-                            <li>Support local farmers and promote seasonal, sustainable produce</li>
-                            <li>Follow our journey: <a href="https://www.instagram.com/annakadukaan/" target="_blank" class="text-blue-600 hover:text-blue-800">@annakadukaan</a></li>
-                        </ul>
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="md:w-1/4">
+                                    <img src="Assets/Anna ka Dukhaan.png" alt="Anna ka Dukhaan" class="w-full h-auto rounded-lg shadow-md">
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4 class="font-semibold text-gray-800">ANNA KA DUKHAAN</h4>
+                                    <p class="text-gray-600">2021 - Present</p>
+                                    <p class="text-gray-600 mb-2">Delhi & Siliguri, India</p>
+                                    <ul class="list-disc list-inside text-gray-600 space-y-2 mt-2">
+                                        <li>Launched a food service specializing in authentic South Indian cuisine</li>
+                                        <li>Developed menu and recipes, managed kitchen operations</li>
+                                        <li>Implemented sustainable packaging and delivery practices</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
