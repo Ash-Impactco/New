@@ -2,38 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "*.html",
+      "src": "**/*",
       "use": "@vercel/static"
-    },
-    {
-      "src": "css/*",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "js/*",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "Assets/**/*",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/Assets/(.*)",
-      "dest": "/Assets/$1"
-    },
-    {
-      "src": "/css/(.*)",
-      "dest": "/css/$1"
-    },
-    {
-      "src": "/js/(.*)",
-      "dest": "/js/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
     }
   ],
   "headers": [
@@ -45,33 +15,8 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
-    },
-    {
-      "source": "/Assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/css/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/js/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
     }
-  ]
-} 
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}
