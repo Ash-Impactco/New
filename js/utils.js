@@ -72,6 +72,36 @@ function getScrollPosition() {
     };
 }
 
+// Handle image loading errors
+function handleImageError(img) {
+    img.onerror = null;
+    img.src = 'Assets/placeholder.png';
+    img.alt = 'Image not available';
+}
+
+// Add loading state to buttons
+function setLoadingState(button, isLoading) {
+    if (isLoading) {
+        button.disabled = true;
+        button.dataset.originalText = button.textContent;
+        button.innerHTML = '<span class="loading-spinner"></span> Loading...';
+    } else {
+        button.disabled = false;
+        button.textContent = button.dataset.originalText;
+    }
+}
+
+// Smooth scroll to element
+function scrollToElement(elementId) {
+    const element = document.getElementById(elementId);
+    if (element) {
+        element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+}
+
 // Export utilities
 window.utils = {
     debounce,
@@ -81,5 +111,8 @@ window.utils = {
     copyToClipboard,
     generateId,
     isMobile,
-    getScrollPosition
+    getScrollPosition,
+    handleImageError,
+    setLoadingState,
+    scrollToElement
 }; 
