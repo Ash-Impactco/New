@@ -45,5 +45,12 @@
       "source": "/js/(.*)",
       "destination": "/js/$1"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/:path/",
+      "destination": "/:path",
+      "permanent": true
+    }
   ]
 }
