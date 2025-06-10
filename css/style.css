@@ -1,0 +1,108 @@
+/* Custom Styles */
+.section {
+    padding: 2rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+/* Collapsible Sections */
+.collapsible {
+    background-color: #f9fafb;
+    color: #111827;
+    cursor: pointer;
+    padding: 1rem;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: background-color 0.3s ease;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.collapsible:hover {
+    background-color: #f3f4f6;
+}
+
+.collapsible:after {
+    content: '\002B';
+    color: #6b7280;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.collapsible.active:after {
+    content: "\2212";
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: white;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.content.show {
+    max-height: 2000px;
+    transition: max-height 0.5s ease-in;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Custom Font Styles */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Custom Colors */
+.text-primary {
+    color: #1f2937;
+}
+
+.text-secondary {
+    color: #4b5563;
+}
+
+/* Custom Spacing */
+.section-spacing {
+    margin-bottom: 2rem;
+}
+
+/* Custom Container */
+.container-custom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section {
+        padding: 1.5rem 0;
+    }
+    
+    .collapsible {
+        padding: 0.75rem;
+    }
+} 
