@@ -1,57 +1,85 @@
-// Mobile menu functionality
-document.getElementById('mobile-menu-button').addEventListener('click', function() {
-    document.getElementById('mobile-menu').classList.toggle('-translate-y-full');
-});
+// Utility functions for the portfolio
 
-// Collapsible sections functionality
-document.querySelectorAll('.collapsible').forEach(button => {
-    button.addEventListener('click', function() {
-        const content = this.nextElementSibling;
-        if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-            content.classList.remove('show');
-            this.classList.remove('active');
-        } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-            content.classList.add('show');
-            this.classList.add('active');
+// Debounce function for performance optimization
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Throttle function for scroll events
+function throttle(func, limit) {
+    let inThrottle;
+    return function(...args) {
+        if (!inThrottle) {
+            func.apply(this, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
         }
-    });
-});
-
-// Smooth scroll functionality
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', function(event) {
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    
-    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
-        mobileMenu.classList.add('-translate-y-full');
     }
-});
+}
 
-// Add animation classes when elements come into view
-const observerOptions = {
-    threshold: 0.1
-};
+// Check if element is in viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-        }
+// Format date to readable string
+function formatDate(date) {
+    return new Date(date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
     });
-}, observerOptions);
+}
 
-document.querySelectorAll('.section').forEach(section => {
-    observer.observe(section);
-}); 
+// Copy text to clipboard
+function copyToClipboard(text) {
+    return navigator.clipboard.writeText(text).then(() => {
+        return true;
+    }).catch(() => {
+        return false;
+    });
+}
+
+// Generate random ID
+function generateId(prefix = '') {
+    return `${prefix}${Math.random().toString(36).substr(2, 9)}`;
+}
+
+// Check if device is mobile
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+// Get current scroll position
+function getScrollPosition() {
+    return {
+        x: window.pageXOffset,
+        y: window.pageYOffset
+    };
+}
+
+// Export utilities
+window.utils = {
+    debounce,
+    throttle,
+    isInViewport,
+    formatDate,
+    copyToClipboard,
+    generateId,
+    isMobile,
+    getScrollPosition
+}; 
