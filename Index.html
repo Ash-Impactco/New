@@ -1,1 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aswin Raj - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .section {
+            padding: 4rem 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .nav-link {
+            color: #4a5568;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #2b6cb0;
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .card {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .collapsible {
+            cursor: pointer;
+            padding: 1rem;
+            border: none;
+            text-align: left;
+            outline: none;
+            background-color: #f8fafc;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            width: 100%;
+        }
+        .collapsible:hover {
+            background-color: #e2e8f0;
+        }
+        .content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .content.show {
+            max-height: 2000px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#home" class="text-2xl font-bold text-blue-600">Aswin Raj</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#ventures" class="nav-link">Ventures</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <button class="md:hidden" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Mobile Menu -->
+    <div class="md:hidden fixed w-full bg-white shadow-md z-40 transform -translate-y-full transition-transform duration-300" id="mobile-menu">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#ventures" class="nav-link">Ventures</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <img src="Assets/vestaearth_cover.jpeg" alt="Vesta Earth Cover" class="hero-image">
+        <div class="container mx-auto px-4 text-center hero-content">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-5xl md:text-6xl font-bold mb-4">Aswin Raj Sivaprakash</h1>
+                <h2 class="text-2xl md:text-3xl mb-8">Business Executive / Customer Support</h2>
+                <div class="flex justify-center space-x-4">
+                    <a href="#contact" class="bg-white text-blue-600 px-8 py-3 rounded-full hover:bg-gray-100 transition-colors">Contact Me</a>
+                    <a href="mailto:aswinr63@gmail.com" class="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-blue-600 transition-colors">Email Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container mx-auto px-4">
+            <div class="section-header">
+                <h2>About</h2>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-lg mb-8">
+                    I've led marketing strategies across Clean Tech, Pharma, Travel, and IGaming—boosting leads by 35% and ROI by 22% across European markets. Now, I'm looking to dive into the carbon removal space, with a growing interest in enhanced rock weathering and other climate solutions. Ideally, this is the last time I update my resume—I'm here to build something long-term in climate.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                        <span>aswinr63@gmail.com</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
+                        <span>Porto, Portugal</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-phone text-blue-600 text-xl"></i>
+                        <span>+351 938816822</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fab fa-linkedin text-blue-600 text-xl"></i>
+                        <a href="https://linkedin.com/in/aswin-sivaprakash" target="_blank" class="hover:text-blue-600">linkedin.com/in/aswin-sivaprakash</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container mx-auto px-4">
+            <div class="section-header">
+                <h2>Education</h2>
+            </div>
+            <div class="max-w-4xl mx-auto space-y-6">
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">MASTER'S IN ENVIRONMENTAL AND ENERGY MANAGEMENT</h3>
+                    <p class="text-gray-600">University of Twente, Enschede (2021 - 2022)</p>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg inline-flex items-center space-x-2 mb-4">
+                            <i class="fas fa-award"></i>
+                            <span>Awarded Full Scholarship</span>
+                        </div>
+                        <div class="space-y-2">
+                            <h5 class="font-semibold text-gray-700">Relevant Coursework:</h5>
+                            <ul class="list-disc list-inside text-gray-600 space-y-3">
+                                <li>
+                                    <span class="font-medium">Energy Management</span>
+                                    <p class="text-sm ml-6 mt-1">Analyzed renewable energy systems, corporate energy strategies, and sustainable infrastructure planning. Worked with tools like HOMER Energy and RETScreen for scenario modeling and project feasibility.</p>
+                                </li>
+                                <li>
+                                    <span class="font-medium">Digitalisation & Sustainability</span>
+                                    <p class="text-sm ml-6 mt-1">Studied how digital tools accelerate clean-tech deployment. Gained experience using Power BI for sustainability data analysis.</p>
+                                </li>
+                                <li>
+                                    <span class="font-medium">Case Project in Geothermal Energy Transition</span>
+                                    <p class="text-sm ml-6 mt-1">Led a team-based project tackling a real-world grid congestion issue. Applied GIS (QGIS) for spatial energy mapping and Excel VBA for custom ROI and emissions modeling.</p>
+                                    <a href="#projects" class="text-blue-600 hover:text-blue-800 text-sm ml-6 mt-1 inline-flex items-center">
+                                        <i class="fas fa-link mr-1"></i>
+                                        View related project
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">BACHELOR'S IN ENVIRONMENTAL SCIENCE</h3>
+                    <p class="text-gray-600">Amity University, Noida (2015 - 2018)</p>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg inline-flex items-center space-x-2 mb-4">
+                            <i class="fas fa-medal"></i>
+                            <span>Passed with Distinction</span>
+                        </div>
+                        <div class="space-y-2">
+                            <h5 class="font-semibold text-gray-700">Relevant Coursework:</h5>
+                            <ul class="list-disc list-inside text-gray-600 space-y-3">
+                                <li>
+                                    <span class="font-medium">Environmental Impact Assessment (EIA)</span>
+                                    <p class="text-sm ml-6 mt-1">Applied EIA frameworks to assess and mitigate environmental risks in real-world project scenarios.</p>
+                                </li>
+                                <li>
+                                    <span class="font-medium">Geographic Information Systems (GIS)</span>
+                                    <p class="text-sm ml-6 mt-1">Developed spatial analysis skills using GIS tools for environmental monitoring and clean-tech site planning.</p>
+                                </li>
+                                <li>
+                                    <span class="font-medium">ISO 14001 & NEBOSH (IGC)</span>
+                                    <p class="text-sm ml-6 mt-1">Completed training in environmental management systems (ISO 14001) and international health, safety, and environmental compliance (NEBOSH IGC) during university.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certification Section -->
+    <section id="certification" class="section">
+        <div class="container mx-auto px-4">
+            <div class="section-header">
+                <h2>Certifications</h2>
+            </div>
+            <div class="max-w-4xl mx-auto space-y-6">
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">PROJECT MANAGEMENT BY GOOGLE</h3>
+                    <p class="text-gray-600">2022</p>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <p class="text-gray-600">Comprehensive project management certification covering essential methodologies and tools.</p>
+                    </div>
+                </div>
+
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">NEGOTIATION</h3>
+                    <p class="text-gray-600">University of Yale</p>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <p class="text-gray-600">Advanced negotiation strategies and techniques from Yale University.</p>
+                    </div>
+                </div>
+
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">GENERATIVE AI FOR DIGITAL MARKETERS</h3>
+                    <p class="text-gray-600">LinkedIn</p>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <p class="text-gray-600">Specialized training in AI applications for digital marketing strategies.</p>
+                    </div>
+                </div>
+
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">NEBOSH INTERNATIONAL GENERAL CERTIFICATE IN OCCUPATIONAL HEALTH AND SAFETY</h3>
+                    <p class="text-gray-600">2022</p>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <p class="text-gray-600">Comprehensive health and safety management certification.</p>
+                    </div>
+                </div>
+
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">ISO 14001:2015 LEAD AUDITOR FOR ENVIRONMENTAL MANAGEMENT SYSTEM</h3>
+                    <p class="text-gray-600">IRCA | International Register of Certified Auditors</p>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <p class="text-gray-600">Professional certification for environmental management system auditing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container mx-auto px-4">
+            <div class="section-header">
+                <h2>Experience</h2>
+            </div>
+            <div class="max-w-4xl mx-auto space-y-6">
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">BUSINESS DEVELOPMENT MANAGER</h3>
+                    <p class="text-gray-600">National Chromatography Inco, Europe (Oct 2022 - May 2024)</p>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <ul class="list-disc list-inside text-gray-600 space-y-3">
+                            <li>Acquired consistent new business with well-formulated and executed strategies based on market expertise.</li>
+                            <li>Collaborated with sales and business development teams to fulfill bids, RFP, and tender under strict timelines.</li>
+                            <li>Contributed to bottom line revenue by attaining 80% of sales quota.</li>
+                            <li>Revitalized marketing efforts employing streamlined processes and rebranding initiatives.</li>
+                            <li>Prospected and qualified marketing leads from the pharmaceutical industry using Salesforce CRM attaining conversion rates of 13%.</li>
+                            <li>Ampified international sales by selling pharmaceutical stocks worth $35k across North America and South Asia.</li>
+                            <li>Liaised with directors, R&D team, sales and procurement team, dispatch and management teams through weekly and monthly meetings.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">CLIENT RELATIONSHIP SPECIALIST</h3>
+                    <p class="text-gray-600">Eurail, Netherlands (Sept 2022 - Aug 2023)</p>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <ul class="list-disc list-inside text-gray-600 space-y-3">
+                            <li>Addressed customer inquiries through phone, email, and chat channels.</li>
+                            <li>Diagnosed and troubleshooted customer problems while delivering technical assistance.</li>
+                            <li>Monitored and escalated complex bet disputes to RFBA, CRM, or OPS teams using 9 Wickets.</li>
+                            <li>Assisted over 300 clients monthly with account registrations, deposits, and withdrawals.</li>
+                            <li>Managed a portfolio of 150+ VIP customers, conducting telemarketing campaigns that resulted in a 20% increase in high-value customer engagement.</li>
+                            <li>Promoted new bonuses and offers, leading to the reactivation of 30% of dormant VIP accounts across targeted regions.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">ENVIRONMENTAL ASSISTANT</h3>
+                    <p class="text-gray-600">MGK Aqua Inco, India (Nov 2020 - Aug 2021)</p>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <ul class="list-disc list-inside text-gray-600 space-y-3">
+                            <li>Developed Detailed Project Reports (DPRs) on sustainability, climate change, GHG management, and energy efficiency for BOSCH, PepsiCo, and multiple textile and tanning companies.</li>
+                            <li>Led water treatment initiatives for 15+ residential and corporate projects by analyzing BOD, DO, TSS, and other parameters.</li>
+                            <li>Designed coagulant/flocculant specifications and supported the installation of drinking water setups, acoustic blowers, and ETPs.</li>
+                            <li>Conducted waste management training during corporate/public events and utilized Agile/Kanban methods for sales tracking and stakeholder engagement.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">PROJECT ASSISTANT</h3>
+                    <p class="text-gray-600">UNICEF, Water Sanitation and Hygiene (WASH), India (Jul 2018 - Jun 2019)</p>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <ul class="list-disc list-inside text-gray-600 space-y-3">
+                            <li>Communicated with government officials regarding environmental sustainability and GHG Management projects.</li>
+                            <li>Streamlined water testing by analyzing 63 parameters and integrated solar-powered stoves for over 10,000 tea estate residents.</li>
+                            <li>Modernized the preliminary designs for water pumps and beddings in 16 tea estates across Dibrugarh, Assam.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container mx-auto px-4">
+            <div class="section-header">
+                <h2>Projects</h2>
+            </div>
+            <div class="max-w-4xl mx-auto space-y-6">
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">ERW Use in Mangroves</h3>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <p class="text-gray-600 mb-4">Research and implementation of Enhanced Rock Weathering in mangrove ecosystems</p>
+                        <a href="https://github.com/Ash-Impactco/ERW---Mangroves" target="_blank" class="text-blue-600 hover:text-blue-800">
+                            View on GitHub <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">ERW Use in Salt Marshes</h3>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <p class="text-gray-600 mb-4">Research and implementation of Enhanced Rock Weathering in salt marsh ecosystems</p>
+                        <a href="https://github.com/Ash-Impactco/Erw--Salt-Marshes" target="_blank" class="text-blue-600 hover:text-blue-800">
+                            View on GitHub <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">Upcoming Geothermal Heat Grid</h3>
+                    <p class="text-gray-600">Leeuwarden, Netherlands (Feb 2022 - Apr 2022)</p>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <ul class="list-disc list-inside text-gray-600 space-y-3">
+                            <li>Conducted comprehensive social impact assessment through interviews with 100 respondents</li>
+                            <li>Explored public concerns regarding integration of geothermal energy into existing heat grid</li>
+                            <li>Implemented DESSIN-ESS conceptual framework for qualitative data processing</li>
+                            <li>Findings published by Omrop Fryslân: <a href="https://www.omropfryslan.nl/nl/nieuws/1144457/internationale-studenten-duurzame-aanpak-in-fryslan-is-mogelijk" target="_blank" class="text-blue-600 hover:text-blue-800">View Publication</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">Coral Bleaching Status</h3>
+                    <p class="text-gray-600">Andaman Islands, India (Dec 2017 - Feb 2018)</p>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <ul class="list-disc list-inside text-gray-600 space-y-3">
+                            <li>Conducted comprehensive SST analysis revealing 1°C temperature threshold above maximum monthly temperature</li>
+                            <li>Identified degradation of zooxanthellae-algae symbiosis due to thermal stress</li>
+                            <li>Developed Coral Bleaching Alert System (CBAS) using satellite-derived SST data</li>
+                            <li>Studied Acropora coral species degradation rate and SST correlation</li>
+                            <li>Presented findings to multiple stakeholders:
+                                <ul class="ml-6 mt-2">
+                                    <li>ANET (Andaman Nicobar Environment Team)</li>
+                                    <li>Indian Wildlife Department</li>
+                                    <li>Indian Coast Guard of Andaman</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">EV-Charging App Pilot</h3>
+                    <p class="text-gray-600">SMOOV, Netherlands (Apr 2022 - Jul 2022)</p>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <ul class="list-disc list-inside text-gray-600 space-y-3">
+                            <li>Specialized in creating fast & reliable charging location apps for EV drivers through traffic analysis, road quality estimation, urban planning, and seamless troubleshooting.</li>
+                            <li>Contributed to reversing Nitrogen Crisis with AMC and migration to cities.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ventures Section -->
+    <section id="ventures" class="section">
+        <div class="container mx-auto px-4">
+            <div class="section-header">
+                <h2>Ventures</h2>
+                <p class="section-subtitle text-gray-600">Sustainable initiatives making a difference</p>
+            </div>
+            <div class="max-w-4xl mx-auto space-y-6">
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">INTRUSIVE THOUGHTS</h3>
+                    <p class="text-gray-600">2022 - Present</p>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <ul class="list-disc list-inside text-gray-600 space-y-3">
+                            <li>Created Intrusive Thoughts, a platform to spread awareness about sustainable living and eco-friendly practices</li>
+                            <li>Share engaging content about climate change, renewable energy, and practical ways to live sustainably</li>
+                            <li>Organize workshops and campaigns to educate communities about environmental issues</li>
+                            <li>Follow us: <a href="https://linktr.ee/intrusivethoughtsftw" target="_blank" class="text-blue-600 hover:text-blue-800">Intrusive Thoughts</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">BURRITO DELHI</h3>
+                    <p class="text-gray-600">2023 - Present</p>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <ul class="list-disc list-inside text-gray-600 space-y-3">
+                            <li>Launched Burrito Delhi, a plant-based food venture that promotes sustainable eating</li>
+                            <li>Offer delicious vegan burritos made with locally-sourced, organic ingredients</li>
+                            <li>Implement food waste reduction strategies through precision cooking and composting</li>
+                            <li>Join us on: <a href="https://www.instagram.com/burrito_delhi/" target="_blank" class="text-blue-600 hover:text-blue-800">@burrito_delhi</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">ANNA KADUKAAN</h3>
+                    <p class="text-gray-600">2023 - Present</p>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <ul class="list-disc list-inside text-gray-600 space-y-3">
+                            <li>Partnered in Anna Kadukaan, a vegan food venture that blends traditional Indian flavors with sustainable practices</li>
+                            <li>Transform traditional recipes into vegan delights while reducing carbon footprint</li>
+                            <li>Support local farmers and promote seasonal, sustainable produce</li>
+                            <li>Follow our journey: <a href="https://www.instagram.com/annakadukaan/" target="_blank" class="text-blue-600 hover:text-blue-800">@annakadukaan</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container mx-auto px-4">
+            <div class="section-header">
+                <h2>Skills</h2>
+            </div>
+            <div class="max-w-4xl mx-auto space-y-6">
+                <!-- Marketing & Demand Generation -->
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">Marketing & Demand Generation</h3>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <h4 class="font-semibold text-gray-700 mb-4">Tools</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <div class="flex items-center space-x-2">
+                                <i class="fab fa-hubspot text-blue-600"></i>
+                                <span>HubSpot</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fab fa-salesforce text-blue-600"></i>
+                                <span>Salesforce</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                                <span>Mailchimp</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-headset text-blue-600"></i>
+                                <span>Zendesk</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-bullhorn text-blue-600"></i>
+                                <span>Coldoutreach</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics & Reporting -->
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">Analytics & Reporting</h3>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-database text-blue-600"></i>
+                                <span>SQL</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-chart-line text-blue-600"></i>
+                                <span>PowerBI</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-users-cog text-blue-600"></i>
+                                <span>CRM</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-file-excel text-blue-600"></i>
+                                <span>Excel</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-table text-blue-600"></i>
+                                <span>Google Sheets</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project & Stakeholder Management -->
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">Project & Stakeholder Management</h3>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="flex items-center space-x-2">
+                                <i class="fab fa-jira text-blue-600"></i>
+                                <span>Jira/Kanban</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-tasks text-blue-600"></i>
+                                <span>Agile</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-file-alt text-blue-600"></i>
+                                <span>SOP Development</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-users text-blue-600"></i>
+                                <span>Cross-functional Collaboration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sustainability & Carbon -->
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">Sustainability & Carbon</h3>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <h4 class="font-semibold text-gray-700 mb-4">Certifications</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-certificate text-blue-600"></i>
+                                <span>ISO14001 EMS Auditing</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-leaf text-blue-600"></i>
+                                <span>GHG Accounting</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-shield-alt text-blue-600"></i>
+                                <span>NEBOSH</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-clipboard-check text-blue-600"></i>
+                                <span>EIA</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-map-marked-alt text-blue-600"></i>
+                                <span>GIS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Communications -->
+                <button class="collapsible w-full text-left">
+                    <h3 class="text-xl font-bold">Communications</h3>
+                </button>
+                <div class="content">
+                    <div class="card p-6">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-file-contract text-blue-600"></i>
+                                <span>RFP/Tender Response</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-file-code text-blue-600"></i>
+                                <span>Technical Content</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-presentation text-blue-600"></i>
+                                <span>Presentation Decks</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-language text-blue-600"></i>
+                                <span>Multilingual Outreach (Unbabel)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container mx-auto px-4">
+            <div class="section-header">
+                <h2>Contact</h2>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="text-center">
+                        <i class="fas fa-map-marker-alt text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Location</h3>
+                        <p>Porto, Portugal</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-envelope text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Email</h3>
+                        <p>aswinr63@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('-translate-y-full');
+        });
+
+        // Simple collapsible sections
+        document.querySelectorAll('.collapsible').forEach(button => {
+            button.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    content.classList.remove('show');
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    content.classList.add('show');
+                }
+            });
+        });
+
+        // Simple smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
