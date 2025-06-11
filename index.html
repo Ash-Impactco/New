@@ -11,8 +11,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
     <style>
         .section {
             padding: 4rem 0;
@@ -143,7 +143,11 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
-        <img src="assets/Profile/vestaearth_cover.jpeg" alt="Hero Background" class="hero-image">
+        <picture>
+            <source srcset="assets/Profile/vestaearth_cover-small.webp" media="(max-width: 768px)">
+            <source srcset="assets/Profile/vestaearth_cover-medium.webp" media="(max-width: 1200px)">
+            <img src="assets/Profile/vestaearth_cover-large.webp" alt="Hero Background" class="hero-image">
+        </picture>
         <div class="container mx-auto px-4 text-center hero-content">
             <div class="max-w-3xl mx-auto">
                 <img src="assets/Profile/Profile Pic.jpg" alt="Profile Picture" class="rounded-full w-32 h-32 mb-4">
@@ -152,7 +156,7 @@
                 <div class="flex justify-center space-x-4">
                     <a href="#contact" class="bg-white text-blue-600 px-8 py-3 rounded-full hover:bg-gray-100 transition-colors">Contact Me</a>
                     <a href="mailto:aswinr63@gmail.com" class="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-blue-600 transition-colors">Email Me</a>
-                    <a href="Assets/Resume/Aswin Resume.pdf" download class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors flex items-center">
+                    <a href="assets/Resume/Aswin Resume.pdf" download class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors flex items-center">
                         <i class="fas fa-download mr-2"></i> Download CV
                     </a>
                 </div>
@@ -588,7 +592,7 @@
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <div class="flex flex-col md:flex-row gap-6">
                         <div class="md:w-1/2">
-                            <img src="assets/Projects/Salt Marshes.jpeg" alt="ERW Salt Marshes Project" class="w-full h-auto rounded-lg shadow-md">
+                            <img src="assets/Projects/Salt Marshes.jpeg" alt="ERW Salt Marshes Project" loading="lazy" class="w-full h-auto rounded-lg shadow-md">
                         </div>
                         <div class="md:w-1/2">
                             <h3 class="text-xl font-semibold text-gray-800">ERW Salt Marshes</h3>
@@ -758,6 +762,46 @@
             </div>
         </div>
     </section>
+
+    <!-- Custom JavaScript -->
+    <script src="js/utils.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
+    <script>
+        // Simple mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('-translate-y-full');
+        });
+
+        // Simple collapsible sections
+        document.querySelectorAll('.collapsible').forEach(button => {
+            button.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    content.classList.remove('show');
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    content.classList.add('show');
+                }
+            });
+        });
+
+        // Simple smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
+
 
     <!-- Custom JavaScript -->
     <script src="js/utils.js"></script>
