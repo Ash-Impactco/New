@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('translate-y-0');
             mobileMenu.classList.toggle('-translate-y-full');
         });
     }
@@ -61,8 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
-        if (mobileMenu && !mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+        if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
             mobileMenu.classList.add('-translate-y-full');
+            mobileMenu.classList.remove('translate-y-0');
         }
     });
 
@@ -178,6 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
                     img.src = img.dataset.src;
+                    img.classList.remove('image-loading');
                     observer.unobserve(img);
                 }
             });
@@ -207,21 +210,119 @@ document.addEventListener('DOMContentLoaded', () => {
             img.style.filter = 'grayscale(100%)';
         });
     });
+
+    // Add parallax effect to hero section
+    window.addEventListener('scroll', () => {
+        const hero = document.querySelector('.hero-image');
+        if (hero) {
+            const scrolled = window.pageYOffset;
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        }
+    });
+
+    // Add text reveal animation to headings
+    document.querySelectorAll('h1, h2, h3').forEach(heading => {
+        heading.classList.add('text-reveal');
+        scrollRevealObserver.observe(heading);
+    });
+
+    // Add card hover effects
+    document.querySelectorAll('.card').forEach(card => {
+        card.classList.add('card-hover');
+    });
+
+    // Handle dark mode
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    document.body.classList.toggle('dark-mode', prefersDarkScheme.matches);
+
+    prefersDarkScheme.addEventListener('change', (e) => {
+        document.body.classList.toggle('dark-mode', e.matches);
+    });
 });
 
-// Add animation classes when elements come into view
+// Intersection Observer for animations
 const observerOptions = {
+    root: null,
+    rootMargin: '0px',
     threshold: 0.1
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
+            entry.target.classList.add('visible');
         }
     });
 }, observerOptions);
 
+// Observe all sections
 document.querySelectorAll('.section').forEach(section => {
     observer.observe(section);
+});
+
+// Smooth scroll for navigation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Image lazy loading
+document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('image-loading');
+                observer.unobserve(img);
+            }
+        });
+    });
+
+    images.forEach(img => imageObserver.observe(img));
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+        mobileMenu.classList.add('-translate-y-full');
+        mobileMenu.classList.remove('translate-y-0');
+    }
+});
+
+// Add parallax effect to hero section
+window.addEventListener('scroll', () => {
+    const hero = document.querySelector('.hero-image');
+    if (hero) {
+        const scrolled = window.pageYOffset;
+        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+    }
+});
+
+// Add text reveal animation to headings
+document.querySelectorAll('h1, h2, h3').forEach(heading => {
+    heading.classList.add('text-reveal');
+    observer.observe(heading);
+});
+
+// Add card hover effects
+document.querySelectorAll('.card').forEach(card => {
+    card.classList.add('card-hover');
+});
+
+// Handle dark mode
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+document.body.classList.toggle('dark-mode', prefersDarkScheme.matches);
+
+prefersDarkScheme.addEventListener('change', (e) => {
+    document.body.classList.toggle('dark-mode', e.matches);
 }); 
